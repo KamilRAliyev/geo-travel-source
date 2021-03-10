@@ -1,0 +1,64 @@
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: 'Select File';
+  display: inline-block;
+  background: #25428C ;
+  border: 1px solid #25428C;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  font-size: 10pt;
+  color: white;
+}
+
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+ /*Radio button design*/
+
+.radio1 {
+  display: none;
+}
+.radio1:checked + .box {
+  background-color: #25428C;
+}
+.radio1:checked + .box span {
+  color: white;
+  transform: translateY(70px);
+}
+.radio1:checked + .box span:before {
+  transform: translateY(0px);
+  opacity: 1;
+}
+.box {
+  width: 100%;
+  background-color: #fff;
+  transition: all 250ms ease;
+  will-change: transition;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  font-family: "Dax", sans-serif;
+  font-weight: 900;
+}
+.box:active {
+  transform: translateY(10px);
+}
+ .box span {
+  font-size: 1.5em;
+  user-select: none;
+  color: #25428C;
+}
+ .box span:before {
+  font-size: 1.2em;
+  display: block;
+  font-weight: normal;
+  color: white;
+}

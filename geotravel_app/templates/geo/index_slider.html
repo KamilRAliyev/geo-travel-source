@@ -1,0 +1,26 @@
+{% load static i18n %}
+<div id="slider_wrapper">
+                <div class="">
+                    <div id="slider_inner" class="clearfix">
+                        <div id="slider" class="clearfix">
+                            <div id="camera_wrap">
+                                {% for tour in popular_tours %}
+                                    {% if tour.image %}
+                                        <div data-src="{{ tour.image.url }}" >
+                                        <div class="camera_caption fadeIn">
+                                            <div class="container">
+                                                <a style="text-decoration: none" href={{ tour.get_absolute_url }} ><div class="txt1">{{ tour.name }}
+{#                                                    <br>{{ tour.duration }} {% trans 'days tour in'%} {{ tour.city }}#}
+                                                </div></a>
+                                                <div class="txt2">{{ tour.description|truncatewords:10 }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>

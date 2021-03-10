@@ -1,0 +1,71 @@
+html[xmlns] .slides{display:block;}
+* html .slides{height:1%;}
+
+#slider_wrapper{position: relative;}
+#slider{margin:0; position: relative;}
+
+#flexslider{position:relative; min-height: 679px;}
+#flexslider .slides>li{display:none;position:relative;}
+
+.slides:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0;}
+.slides{list-style:none outside none;margin:0;padding: 0;}
+.slides img{width:100%; border-radius:0px; -moz-border-radius:0px; -webkit-border-radius:0px;}
+
+#flexslider .flex-control-nav{display:inline-block; padding: 0; margin: 0; position: absolute; right: 0; left: 0; bottom: 95px; z-index:5; overflow:hidden;list-style:none; text-align: center; line-height: 1;}
+#flexslider .flex-control-nav li{display: inline-block; float:none; width:11px; height:11px; margin: 0 8px;}
+#flexslider .flex-control-nav li:first-child{}
+#flexslider .flex-control-nav li a{display:block;width: 100%; height: 100%; background: none; text-indent: -9999%; cursor:pointer; position: relative; overflow: hidden;background: url(../images/pagination.png) left top no-repeat;}
+#flexslider .flex-control-nav li a:hover, #flexslider .flex-control-nav li a.flex-active{ background-position: right;}
+#flexslider .flex-control-nav li .flex-active{cursor:default;pointer-events:none;}
+
+#flexslider .flex-direction-nav{padding: 0; margin: 0; list-style: none;}
+#flexslider .flex-direction-nav:before{content: ''; display: block; width: 414px; height: 65px; background: url(../images/corner1.png) center top no-repeat; position: absolute; left: 50%; margin-left: -207px; bottom: 0;}
+#flexslider .flex-direction-nav li{}
+#flexslider .flex-direction-nav li a{display: block; width: 17px; height: 22px; position: absolute; left: 50%; margin-left: -30px; bottom: 14px;}
+#flexslider .flex-direction-nav li a.flex-prev{background: url(../images/prev.png) left top no-repeat;}
+#flexslider .flex-direction-nav li a.flex-prev:hover{background-position: bottom;}
+#flexslider .flex-direction-nav li a.flex-next{background: url(../images/next.png) left top no-repeat; margin-left: 13px;}
+#flexslider .flex-direction-nav li a.flex-next:hover{background-position: bottom;}
+
+.flex-caption{position:absolute;width: 100%; left:0; top: 50%; margin-top: -290px; text-align:center;}
+.flex-caption > div{}
+.flex-caption .img{padding-bottom: 25px;}
+.flex-caption .img img{width: auto; display: block; margin-left: auto; margin-right: auto;}
+.flex-caption .txt1{font-family: 'Lato'; font-weight: 900; font-size: 60px; line-height: 1.1; color: #fff; text-transform: uppercase; text-shadow:1px 1px 3px rgba(0, 0, 0, 0.5); padding-bottom: 10px;}
+.flex-caption .txt2{font-family: 'Lato'; font-weight: 400; font-size: 40px; line-height: 1.1; color: #fff; text-transform: uppercase; text-shadow:1px 1px 3px rgba(0, 0, 0, 0.5); padding-bottom: 10px;}
+.flex-caption .txt3{padding-top: 10px; text-align: center;}
+
+
+
+
+
+@media (max-width: 1199px) {
+  #flexslider{min-height: 559px;}
+  .flex-caption .img img{max-width: 200px;}
+
+
+}
+
+@media (max-width: 991px) {
+  #flexslider{min-height: 431px;}
+  .flex-caption{margin-top: -220px;}
+  .flex-caption .img img{max-width: 120px;}
+  .flex-caption .txt1{font-size: 40px;}
+  .flex-caption .txt2{font-size: 20px;}
+
+
+
+}
+
+@media (max-width: 767px) {
+  #flexslider{min-height: 180px;}
+
+  .flex-caption{display: none;}
+
+}
+
+@media (max-width: 480px) {
+  #flexslider .flex-direction-nav:before{width: 314px; height: 48px; margin-left: -157px; background-size: 100% auto;}
+
+
+}

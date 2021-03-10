@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load static i18n %}
+
+{% block bodyclass %}
+class="multipage not-front page-tours"
+{% endblock %}
+
+{% block main %}
+    <div id="parallax2" class="parallax">
+        <div class="bg2 parallax-bg" style="background-image: url({{ content.image.url }})"></div>
+        <div class="overlay"></div>
+        <div class="parallax-content">
+            <div class="container">
+
+                <div class="txt1">{{ content.name }}</div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container">
+    {% if message %}
+        <div class="alert alert-success" style="margin: 1rem ;" onclick="$('.alert').alert('close')" role="alert">
+          {{ message }}
+        </div>
+    {% endif %}
+    <div class="post-story">
+        <div class="post-story-body">
+            <div class="container">
+                {% if table %}
+                <table class="table table-striped table-dark">
+                    <thead style="color:#25428C;" >
+                       <tr>
+                         <th scope="col">{% trans 'Price'%}</th>
+                         <th scope="col">{% trans 'Description'%}</th>
+                         </tr>
+                    </thead>
+                    <tbody>
+                       {% for row in table %}
+                         <tr>
+                           <td>${{ row.price }}</td>
+                           <td>{{ row.desc }}</td>
+                         </tr>
+                       {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
+
+
+            <br>
+                    {% if LANGUAGE_CODE == "ru" %}
+                        {{ content.content_ru|safe }}
+                    {% elif LANGUAGE_CODE == "es" %}
+                        {{ content.content_es|safe }}
+                    {% elif LANGUAGE_CODE == "bg" %}
+                        {{ content.content_bg|safe }}
+                    {% else %}
+                        {{ content.content|safe }}
+                    {% endif %}
+
+            </div>
+
+        </div>
+    </div>
+{#    <div class="share_post clearfix">#}
+{#        <div class="txt1">Share Tour:</div>#}
+{#        <div class="social2_wrapper">#}
+{#            <ul class="social2 clearfix">#}
+{#                <li><a href="#"><i class="fa fa-facebook"></i></a></li>#}
+{#                <li><a href="#"><i class="fa fa-twitter"></i></a></li>#}
+{#                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>#}
+{#                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>#}
+{#            </ul>#}
+{#        </div>#}
+{#    </div>#}
+
+    <div class="live-comment">
+        <div class="live-comment-title">{% trans 'Order a Guide'%}</div>
+
+        <div class="live-comment-form">
+            <div id="note3"></div>
+            <div id="fields3" >
+                <form id="ajax-contact-form3" class="form-horizontal clearfix"
+                                          method="post">
+                    {% csrf_token %}
+                    {{ form.non_field_errors }}
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <i class="fa fa-user"></i>
+                                <label for="{{ form.name.id_for_label }}">{% trans 'Your Name'%}</label>
+                                <p>{{ form.name.errors }}</p>
+                                {{ form.name }}
+                            </div>
+
+                            <div class="form-group">
+                                <i class="fa fa-envelope"></i>
+                                <label for="{{ form.email.id_for_label }}">{% trans 'Email'%}</label>
+                                <p>{{ form.email.errors }}</p>
+                                {{ form.email }}
+
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="{{ form.message.id_for_label }}">{% trans 'Your Message'%}</label>
+                                <p>{{ form.message.errors }}</p>
+                                {{ form.message }}
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <button type="submit" class="btn-default btn-cf-submit3">{% trans 'Submit'%}</button>
+                    <p class="clearfix"></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,304 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load static i18n %}
+{% block bodyclass %}
+class="multipage not-front page-tours"
+{% endblock %}
+
+{% block main %}
+<div class="overlay"></div>
+
+
+    <div id="google_map2_wrapper">
+        <div id="google_map2"></div>
+    </div>
+
+
+    <div class="breadcrumbs2_wrapper">
+        <div class="container">
+            <div class="breadcrumbs1"><a href={% url 'home' %}>{% trans 'Home'%}</a><span>/</span><a
+                    href="">{% trans 'Pages'%}</a><span>/</span>{% trans 'Tours Detail:'%}{{ tour.name }}
+            </div>
+        </div>
+    </div>
+
+    <div id="tours2">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 col-md-3">
+                        {% if message %}
+                            <div class="alert alert-success" style="margin: 1rem ;" onclick="$('.alert').alert('close')" role="alert">
+                                {{ message }}
+                            </div>
+                        {% endif %}
+                    <div class="tours_sidebar">
+
+                        <div class="title3">{{ tour.name }}</div>
+
+                        <form id="ajax-contact-form2" class="form-horizontal" method="post">{% csrf_token %}
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="label" for="name" >{% trans 'Full Name:'%}</label>
+                                                <input type="text" class="form-control" id="name" name="full_name"
+                                                       value="{% trans 'Your Name'%}" onBlur="if(this.value=='') this.value='Your Name'"
+                                                       onFocus="if(this.value =='Your Name' ) this.value=''">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="label" for="email" >{% trans 'Email:'%}</label>
+                                                <input type="email" id="email" class="form-control" name="email"
+                                                       value="{% trans 'Your Email'%}" onBlur="if(this.value=='') this.value='Your Email'"
+                                                       onFocus="if(this.value =='Your Email' ) this.value=''">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                <div class="select1_wrapper">
+                                            <label class="label" style="color: grey" for="select">{% trans 'Tour Option:'%}</label>
+                                                <select id="prices" class="form-control" id="select" name="select" style="width: 100%">
+                                                    {% for option in table %}
+                                                        <option {% if forloop.first or table.count == 1 %} selected {% endif %} value="{{ option.pk }}">{{ option.desc }}, ${{ option.price }}</option>
+                                                    {% endfor %}
+                                                </select>
+                                        </div>
+                            </div>
+                            </div>
+
+
+                            <br>
+
+                            <div class="row">
+                                <div class="col-sm-7">
+                                    <div class="pricetitle">{% trans 'total booking:'%}</div>
+                                </div>
+                                <div class="col-sm-5">
+                                    <div class="price" id="real_price" style="display: none;">{{ tour.price  }}</div>
+                                    <div class="price" id="price">${{ table.first.price  }}</div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-default btn-cf-reserve">{% trans 'RESERVE NOW'%}</button>
+                        </form>
+
+                        <div class="divider2"></div>
+
+                        <div class="title3">{% trans 'categories'%}</div>
+
+                        <div class="accordion accordion1">
+                            <h3>{% trans 'tours'%}</h3>
+                            <div>
+                                <ul class="ul2">
+                                    {% for cat in category %}
+                                    <li><a href={{ cat.get_absolute_url }}>{{ cat.name }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="col-sm-9">
+
+                    <div class="blog_content">
+
+                        <div class="post post-full">
+                            <div class="post-header">
+                            {% if tour_slider %}
+                                <div class="post-slide">
+                                    <div id="sl3">
+                                        <a class="sl3_prev" href="#"></a>
+                                        <a class="sl3_next" href="#"></a>
+                                        <div class="sl3_pagination"></div>
+                                        <div class="carousel-box">
+                                            <div class="inner">
+                                                <div class="carousel main">
+                                                    <ul>
+                                                        {% for img in tour_slider %}
+                                                        <li>
+                                                            <div class="sl3">
+                                                                <div class="sl3_inner">
+                                                                    <img src="{{ img.images.url }}" alt=""
+                                                                         class="img-responsive">
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                            </div>
+                            <div class="post-story">
+                                <h3 style="text-align: center; color: #25428C">{{ tour.name }}</h3>
+                                <br>
+                            {% if table %}
+                                    <table class="table table-striped table-dark">
+                                      <thead style="color:#25428C;" >
+                                        <tr>
+                                          <th scope="col">{% trans 'Price'%}</th>
+                                          <th scope="col">{% trans 'Description'%}</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+
+                                            {% for row in table %}
+                                                <tr>
+                                                  <td>${{ row.price }}</td>
+                                                  <td>{{ row.desc }}</td>
+                                                </tr>
+                                            {% endfor %}
+
+                                      </tbody>
+                                    </table>
+                            {% endif %}
+                                <div class="post-story-body container">
+                                    {% if LANGUAGE_CODE == "ru" %}
+                                        {{ tour.content_ru|safe }}
+                                    {% elif LANGUAGE_CODE == "es" %}
+                                        {{ tour.content_es|safe }}
+                                    {% elif LANGUAGE_CODE == "bg" %}
+                                        {{ tour.content_bg|safe }}
+                                    {% else %}
+                                        {{ tour.content|safe }}
+                                    {% endif %}
+
+                                </div>
+                            </div>
+                        </div>
+
+{#                        <div class="share_post clearfix">#}
+{#                            <div class="txt1">Share Tour:</div>#}
+{#                            <div class="social2_wrapper">#}
+{#                                <ul class="social2 clearfix">#}
+{#                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>#}
+{#                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>#}
+{#                                    <li><a href="#"><i class="fa fa-pinterest"></i></a></li>#}
+{#                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>#}
+{#                                </ul>#}
+{#                            </div>#}
+{#                        </div>#}
+
+                    {% if comments %}
+                        <div class="num-comments clearfix">
+                            <div class="left">{{ comments|length }} {% trans 'Comment(s)'%}</div>
+                        </div>
+                    {% for comment in comments %}
+                        <div class="comment-block clearfix">
+                            <div class="caption">
+                                <div class="top clearfix">
+                                    <div class="txt1"><a >{{ comment.full_name|escape }}</a></div>
+                                    <div class="txt2">{{ comment.created_at|timesince}}</div>
+                                </div>
+                                <div class="txt3">
+                                    <p>
+                                        {{ comment.comment|escape }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    {% endif %}
+
+
+
+                        <div class="live-comment">
+                            <div class="live-comment-title">{% trans 'Leave a Comment'%}</div>
+                            <div class="live-comment-form">
+
+                                <div id="note3"></div>
+                                <div id="fields3">
+                                    <form id="ajax-contact-form3" class="form-horizontal clearfix" method="post" action="{{ tour.slug }}/comment">
+                                        {% csrf_token %}
+                                        <div class="row">
+                                            <div class="col-sm-6">
+
+                                                <div class="form-group">
+                                                    {{ comment_form.full_name.errors }}
+                                                <label class="label" for="{{ comment_form.full_name.id_for_label }}" >{% trans 'Full Name:'%}</label>
+                                                    {{ comment_form.full_name }}
+                                                </div>
+
+                                                <div class="form-group">
+                                                     {{ comment_form.email.errors }}
+                                                <label class="label" for="{{ comment_form.email.id_for_label }}" >{% trans 'Email:'%}</label>
+                                                    {{ comment_form.email }}
+                                                </div>
+
+
+
+                                            </div>
+                                            <div class="col-sm-6">
+
+                                                <div class="form-group">
+                                                    {{ comment_form.comment.errors }}
+                                                <label class="label" for="{{ comment_form.comment.id_for_label }}" >{% trans 'Comment:'%}</label>
+                                                    {{ comment_form.comment }}
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                        <button type="submit" class="btn-default btn-cf-submit3">{% trans 'Submit'%}</button>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+{% endblock %}
+
+
+{% block js %}
+<script type="text/javascript" >
+let selectedOption;
+let regex = /[+-]?\d+(?:\.\d+)?/g;
+     $(document).ready(function() {
+         selectedOption = $('option').first().text();
+              let pax = regex.exec(selectedOption);
+              let price = regex.exec(selectedOption);
+              pax = parseFloat(pax);
+              price = parseFloat(price);
+              let total = price*pax;
+              let price_text = `${total}`;
+              $("#price").text('$'+price_text);
+          $("#prices").change(function () {
+              regex = /[+-]?\d+(?:\.\d+)?/g;
+              selectedOption = $(this).children("option:selected").text();
+              let pax = regex.exec(selectedOption);
+              let price = regex.exec(selectedOption);
+              pax = parseFloat(pax);
+              price = parseFloat(price);
+              let total = price*pax;
+              let price_text = `${total}`;
+              $("#price").text('$'+price_text);
+              });
+     });
+</script>
+{% endblock %}

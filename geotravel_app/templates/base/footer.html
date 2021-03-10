@@ -1,0 +1,52 @@
+{% load static %}
+{% load static i18n %}
+
+
+<div class="bot1">
+        <div class="container">
+            <div class="row pb-1">
+
+                <div class="col-sm-4">
+                    <h3 style="color: white;">Tours</h3>
+                        <p><a style="text-decoration: none; color: white;" href="/tours/category/1">{% trans 'Day Trips'%}</a></p>
+                        <p><a style="text-decoration: none; color: white;" href="/tours/category/2">{% trans 'Long Journeys'%}</a></p>
+                        <p><a style="text-decoration: none; color: white;" href="/tours/category/3">{% trans 'Active Programmes'%}</a></p>
+                        <p><a style="text-decoration: none; color: white;" href="/tours/category/4">{% trans 'Inspirational Activities'%}</a></p>
+
+                </div>
+                <div class="col-sm-4">
+                    <h3 style="color: white;">{% trans 'Guide Services'%}</h3>
+                        {% if guide_pages %}
+                        {% for foo in guide_pages|slice:":5" %}
+                        {% if foo.slug %}
+                            <p><a style="text-decoration: none; color: white;" href="/transport/{{ foo.slug }}">{{ foo.name }}</a></p>
+                        {% endif %}
+                        {% endfor %}
+                        {% endif %}
+
+                </div>
+
+
+                <div class="col-sm-4">
+                    <h3 style="color: white;">{% trans 'Transport Services'%}</h3>
+                        <p><a style="text-decoration: none; color: white;" href="{% url 'transfer' %}">{% trans 'Transfers'%}</a></p>
+                        {% if transfer_static_pages %}
+                        {% for foo in transfer_static_pages|slice:":3" %}
+                        {% if foo.slug %}
+                            <p><a style="text-decoration: none; color: white;" href="/transport/{{ foo.slug }}">{{ foo.name }}</a></p>
+                        {% endif %}
+                        {% endfor %}
+                        {% endif %}
+                        <p><a style="text-decoration: none; color: white;" href="/transport/rentacar/">{% trans 'Car Rental'%}</a></p>
+                </div>
+
+        </div>
+            <hr>
+    </div>
+
+    <div class="bot2">
+        <div class="container">
+
+            <div class="copy">{% trans '&copy; 2020 All rights reserved. Travel Company'%}</div>
+        </div>
+    </div>

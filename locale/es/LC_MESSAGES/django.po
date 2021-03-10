@@ -1,0 +1,687 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-13 08:59+0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\geotravel\settings\base.py:129 .\geotravel\settings\local.py:129
+#: .\geotravel\settings\production.py:135
+msgid "Russian"
+msgstr ""
+
+#: .\geotravel\settings\base.py:130 .\geotravel\settings\local.py:130
+#: .\geotravel\settings\production.py:136
+msgid "English"
+msgstr ""
+
+#: .\geotravel\settings\base.py:131 .\geotravel\settings\local.py:131
+#: .\geotravel\settings\production.py:137
+msgid "Spanish"
+msgstr ""
+
+#: .\geotravel\settings\base.py:132 .\geotravel\settings\local.py:132
+#: .\geotravel\settings\production.py:138
+msgid "Bulgarian"
+msgstr ""
+
+#: .\geotravel_app\templates\base.html:12
+msgid "Geo Travel Azerbaijan"
+msgstr ""
+
+#: .\geotravel_app\templates\base.html:43
+msgid "Do you like cookies?"
+msgstr ""
+
+#: .\geotravel_app\templates\base.html:43
+msgid "We use cookies to ensure you get the best experience on our website."
+msgstr ""
+
+#: .\geotravel_app\templates\base.html:43
+msgid "Learn more"
+msgstr ""
+
+#: .\geotravel_app\templates\base\footer.html:11
+msgid "Day Trips"
+msgstr ""
+
+#: .\geotravel_app\templates\base\footer.html:12
+msgid "Long Journeys"
+msgstr ""
+
+#: .\geotravel_app\templates\base\footer.html:13
+msgid "Active Programmes"
+msgstr ""
+
+#: .\geotravel_app\templates\base\footer.html:14
+msgid "Inspirational Activities"
+msgstr ""
+
+#: .\geotravel_app\templates\base\footer.html:18
+#: .\geotravel_app\templates\base\navbar.html:57
+msgid "Guide Services"
+msgstr ""
+
+#: .\geotravel_app\templates\base\footer.html:31
+msgid "Transport Services"
+msgstr ""
+
+#: .\geotravel_app\templates\base\footer.html:32
+#: .\geotravel_app\templates\base\navbar.html:62
+msgid "Transfers"
+msgstr ""
+
+#: .\geotravel_app\templates\base\footer.html:40
+msgid "Car Rental"
+msgstr ""
+
+#: .\geotravel_app\templates\base\footer.html:50
+msgid "&copy; 2020 All rights reserved. Travel Company"
+msgstr ""
+
+#: .\geotravel_app\templates\base\navbar.html:30
+msgid "Toggle navigation"
+msgstr ""
+
+#: .\geotravel_app\templates\base\navbar.html:39
+#: .\guides\templates\guide_list.html:26 .\tours\templates\tour-details.html:19
+#: .\tours\templates\tours-list.html:27
+#: .\transport\templates\car_details.html:19
+#: .\transport\templates\car_rental_list.html:25
+msgid "Home"
+msgstr ""
+
+#: .\geotravel_app\templates\base\navbar.html:43
+msgid "E-visa"
+msgstr ""
+
+#: .\geotravel_app\templates\base\navbar.html:48
+#: .\geotravel_app\templates\geo\index.html:21
+msgid "Tours"
+msgstr ""
+
+#: .\geotravel_app\templates\base\navbar.html:59
+msgid "Transport services"
+msgstr ""
+
+#: .\geotravel_app\templates\base\navbar.html:75
+msgid "Car rental"
+msgstr ""
+
+#: .\geotravel_app\templates\base\navbar.html:79
+msgid "B2B"
+msgstr ""
+
+#: .\geotravel_app\templates\base\navbar.html:87
+msgid "About Us"
+msgstr ""
+
+#: .\geotravel_app\templates\base\navbar.html:90
+msgid "Who we are?"
+msgstr ""
+
+#: .\geotravel_app\templates\base\navbar.html:91
+msgid "Where you can meet us?"
+msgstr ""
+
+#: .\geotravel_app\templates\base\navbar.html:92
+msgid "Our mission"
+msgstr ""
+
+#: .\geotravel_app\templates\forms\evisaform.html:24
+#: .\tours\templates\tour-details.html:44
+#: .\tours\templates\tour-details.html:233
+#: .\transport\templates\car_details.html:47
+#: .\transport\templates\transport_form.html:389
+msgid "Full Name:"
+msgstr ""
+
+#: .\geotravel_app\templates\forms\evisaform.html:35
+#: .\tours\templates\tour-details.html:56
+#: .\tours\templates\tour-details.html:239
+#: .\transport\templates\car_details.html:58
+msgid "Email:"
+msgstr ""
+
+#: .\geotravel_app\templates\forms\evisaform.html:46
+msgid "Phone Number:"
+msgstr ""
+
+#: .\geotravel_app\templates\forms\evisaform.html:57
+msgid "Passport Scan:"
+msgstr ""
+
+#: .\geotravel_app\templates\forms\evisaform.html:68
+msgid "Document Scan:"
+msgstr ""
+
+#: .\geotravel_app\templates\forms\evisaform.html:77
+msgid "Need a help!"
+msgstr ""
+
+#: .\geotravel_app\templates\geo\index.html:22
+msgid "Transport"
+msgstr ""
+
+#: .\geotravel_app\templates\geo\index.html:23
+msgid "Guide"
+msgstr ""
+
+#: .\geotravel_app\templates\geo\index.html:38
+msgid "City:"
+msgstr ""
+
+#: .\geotravel_app\templates\geo\index.html:41
+msgid "region, city"
+msgstr ""
+
+#: .\geotravel_app\templates\geo\index.html:85
+msgid "Num of Days"
+msgstr ""
+
+#: .\geotravel_app\templates\geo\index.html:127
+msgid "search now"
+msgstr ""
+
+#: .\geotravel_app\templates\geo\index.html:144
+msgid "Most popular Tours:"
+msgstr ""
+
+#: .\geotravel_app\templates\geo\index.html:145
+msgid ""
+"Each year we have thousands of guests from all over the World. Believe us we "
+"know what we are offering."
+msgstr ""
+
+#: .\geotravel_app\templates\geo\index.html:285
+msgid "Most popular Cars of week:"
+msgstr ""
+
+#: .\geotravel_app\templates\geo\index.html:322
+#: .\tours\templates\tours-list.html:87
+#: .\transport\templates\car_rental_list.html:51
+msgid "from"
+msgstr ""
+
+#: .\geotravel_app\templates\geo\index.html:582
+msgid "get in touch"
+msgstr ""
+
+#: .\geotravel_app\templates\geo\index.html:583
+msgid "contact information"
+msgstr ""
+
+#: .\geotravel_app\templates\geo\index.html:597
+#: .\guides\templates\guide.html:95 .\tours\templates\tour-details.html:46
+msgid "Your Name"
+msgstr ""
+
+#: .\geotravel_app\templates\geo\index.html:603
+#: .\guides\templates\guide.html:102
+msgid "Email"
+msgstr ""
+
+#: .\geotravel_app\templates\geo\index.html:612
+msgid "Subject"
+msgstr ""
+
+#: .\geotravel_app\templates\geo\index.html:620
+#: .\guides\templates\guide.html:110
+msgid "Your Message"
+msgstr ""
+
+#: .\geotravel_app\templates\geo\index.html:625
+msgid "submit comment"
+msgstr ""
+
+#: .\geotravel_app\templates\geo\index.html:633
+msgid "about us"
+msgstr ""
+
+#: .\geotravel_app\templates\geo\index.html:641
+msgid "contact info"
+msgstr ""
+
+#: .\geotravel_app\templates\geo\index.html:643
+msgid "Phone:"
+msgstr ""
+
+#: .\geotravel_app\templates\geo\index.html:644
+msgid "Email us:"
+msgstr ""
+
+#: .\geotravel_app\templates\geo\index.html:645
+msgid "Address:"
+msgstr ""
+
+#: .\guides\templates\guide.html:38 .\tours\templates\tour-details.html:154
+#: .\transport\templates\static_page.html:35
+msgid "Price"
+msgstr ""
+
+#: .\guides\templates\guide.html:39 .\tours\templates\tour-details.html:155
+#: .\transport\templates\static_page.html:36
+msgid "Description"
+msgstr ""
+
+#: .\guides\templates\guide.html:82
+msgid "Order a Guide"
+msgstr ""
+
+#: .\guides\templates\guide.html:118 .\tours\templates\tour-details.html:258
+msgid "Submit"
+msgstr ""
+
+#: .\guides\templates\guide_list.html:16
+msgid "all guides for you"
+msgstr ""
+
+#: .\guides\templates\guide_list.html:17 .\tours\templates\tours-list.html:18
+#: .\transport\templates\car_rental_list.html:16
+msgid "has been found"
+msgstr ""
+
+#: .\guides\templates\guide_list.html:17
+msgid "guide(s)"
+msgstr ""
+
+#: .\guides\templates\guide_list.html:26
+msgid "list guides"
+msgstr ""
+
+#: .\guides\templates\guide_list.html:50 .\tours\templates\tours-list.html:89
+#: .\transport\templates\car_rental_list.html:53
+msgid "view more"
+msgstr ""
+
+#: .\guides\templates\guide_list.html:63 .\tours\templates\tours-list.html:102
+#: .\transport\templates\car_rental_list.html:66
+msgid "prev page"
+msgstr ""
+
+#: .\guides\templates\guide_list.html:106 .\tours\templates\tours-list.html:145
+#: .\transport\templates\car_rental_list.html:109
+msgid "next page"
+msgstr ""
+
+#: .\tours\templates\snippets\tour_sidebar.html:7
+msgid "Filter"
+msgstr ""
+
+#: .\tours\templates\snippets\tour_sidebar.html:16
+msgid "city:"
+msgstr ""
+
+#: .\tours\templates\snippets\tour_sidebar.html:18
+msgid "Your City"
+msgstr ""
+
+#: .\tours\templates\snippets\tour_sidebar.html:26
+msgid "get tours"
+msgstr ""
+
+#: .\tours\templates\snippets\tour_sidebar.html:31
+#: .\tours\templates\tour-details.html:93
+msgid "categories"
+msgstr ""
+
+#: .\tours\templates\snippets\tour_sidebar.html:34
+#: .\tours\templates\tour-details.html:96
+msgid "tours"
+msgstr ""
+
+#: .\tours\templates\snippets\tour_sidebar.html:48
+#: .\transport\templates\snippets\car_rental_list_sidebar.html:56
+msgid "price range"
+msgstr ""
+
+#: .\tours\templates\snippets\tour_sidebar.html:60
+#: .\transport\templates\snippets\car_rental_list_sidebar.html:68
+msgid "filter"
+msgstr ""
+
+#: .\tours\templates\tour-details.html:20
+#: .\transport\templates\car_details.html:20
+msgid "Pages"
+msgstr ""
+
+#: .\tours\templates\tour-details.html:20
+msgid "Tours Detail:"
+msgstr ""
+
+#: .\tours\templates\tour-details.html:58
+msgid "Your Email"
+msgstr ""
+
+#: .\tours\templates\tour-details.html:66
+msgid "Tour Option:"
+msgstr ""
+
+#: .\tours\templates\tour-details.html:81
+msgid "total booking:"
+msgstr ""
+
+#: .\tours\templates\tour-details.html:88
+#: .\transport\templates\car_details.html:103
+msgid "RESERVE NOW"
+msgstr ""
+
+#: .\tours\templates\tour-details.html:199
+msgid "Comment(s)"
+msgstr ""
+
+#: .\tours\templates\tour-details.html:221
+msgid "Leave a Comment"
+msgstr ""
+
+#: .\tours\templates\tour-details.html:250
+msgid "Comment:"
+msgstr ""
+
+#: .\tours\templates\tours-list.html:17
+msgid "all tours for you"
+msgstr ""
+
+#: .\tours\templates\tours-list.html:18
+msgid "tour(s)"
+msgstr ""
+
+#: .\tours\templates\tours-list.html:27
+msgid "list tours"
+msgstr ""
+
+#: .\tours\templates\tours-list.html:48
+msgid "days"
+msgstr ""
+
+#: .\tours\templates\tours-list.html:50
+msgid "day"
+msgstr ""
+
+#: .\transport\templates\car_details.html:20
+msgid "Vehicle Detail:"
+msgstr ""
+
+#: .\transport\templates\car_details.html:69
+msgid "Start Date:"
+msgstr ""
+
+#: .\transport\templates\car_details.html:83
+msgid "End Date:"
+msgstr ""
+
+#: .\transport\templates\car_details.html:96
+msgid "price:"
+msgstr ""
+
+#: .\transport\templates\car_details.html:165
+msgid "passengers"
+msgstr ""
+
+#: .\transport\templates\car_details.html:166
+#: .\transport\templates\car_rental_list.html:45
+msgid "transmission"
+msgstr ""
+
+#: .\transport\templates\car_details.html:167
+#: .\transport\templates\car_rental_list.html:42
+msgid "model"
+msgstr ""
+
+#: .\transport\templates\car_rental_list.html:15
+msgid "Rent a Car"
+msgstr ""
+
+#: .\transport\templates\car_rental_list.html:16
+msgid "vehicle(s)"
+msgstr ""
+
+#: .\transport\templates\car_rental_list.html:25
+msgid "Rental Car List"
+msgstr ""
+
+#: .\transport\templates\car_rental_list.html:41
+msgid "Category:"
+msgstr ""
+
+#: .\transport\templates\car_rental_list.html:44
+#: .\transport\templates\snippets\car_rental_list_sidebar.html:28
+msgid "Passenger capacity:"
+msgstr ""
+
+#: .\transport\templates\car_rental_list.html:44
+msgid "passengers."
+msgstr ""
+
+#: .\transport\templates\car_rental_list.html:45
+msgid "Engine:"
+msgstr ""
+
+#: .\transport\templates\car_rental_list.html:46
+msgid "Body Style:"
+msgstr ""
+
+#: .\transport\templates\snippets\car_rental_list_sidebar.html:7
+msgid "Search:"
+msgstr ""
+
+#: .\transport\templates\snippets\car_rental_list_sidebar.html:16
+msgid "Vehicle category:"
+msgstr ""
+
+#: .\transport\templates\snippets\car_rental_list_sidebar.html:18
+#: .\transport\templates\snippets\car_rental_list_sidebar.html:30
+#: .\transport\templates\snippets\car_rental_list_sidebar.html:40
+msgid "Any"
+msgstr ""
+
+#: .\transport\templates\snippets\car_rental_list_sidebar.html:19
+msgid "Business"
+msgstr ""
+
+#: .\transport\templates\snippets\car_rental_list_sidebar.html:20
+msgid "Offroader"
+msgstr ""
+
+#: .\transport\templates\snippets\car_rental_list_sidebar.html:21
+msgid "Minivan"
+msgstr ""
+
+#: .\transport\templates\snippets\car_rental_list_sidebar.html:22
+msgid "Pick-Up"
+msgstr ""
+
+#: .\transport\templates\snippets\car_rental_list_sidebar.html:23
+msgid "Standard"
+msgstr ""
+
+#: .\transport\templates\snippets\car_rental_list_sidebar.html:24
+msgid "Econom"
+msgstr ""
+
+#: .\transport\templates\snippets\car_rental_list_sidebar.html:31
+msgid "2 pas."
+msgstr ""
+
+#: .\transport\templates\snippets\car_rental_list_sidebar.html:32
+msgid "4 pas."
+msgstr ""
+
+#: .\transport\templates\snippets\car_rental_list_sidebar.html:33
+msgid "6 pas."
+msgstr ""
+
+#: .\transport\templates\snippets\car_rental_list_sidebar.html:34
+msgid "8 pas."
+msgstr ""
+
+#: .\transport\templates\snippets\car_rental_list_sidebar.html:38
+msgid "Transmission:"
+msgstr ""
+
+#: .\transport\templates\snippets\car_rental_list_sidebar.html:41
+msgid "Automatical"
+msgstr ""
+
+#: .\transport\templates\snippets\car_rental_list_sidebar.html:42
+msgid "Manual"
+msgstr ""
+
+#: .\transport\templates\snippets\car_rental_list_sidebar.html:49
+msgid "get Vehicles"
+msgstr ""
+
+#: .\transport\templates\transport_form.html:14
+msgid "Transfer Online booking"
+msgstr ""
+
+#: .\transport\templates\transport_form.html:17
+msgid "Choose Itinerary"
+msgstr ""
+
+#: .\transport\templates\transport_form.html:24
+msgid "From:"
+msgstr ""
+
+#: .\transport\templates\transport_form.html:123
+msgid "To:"
+msgstr ""
+
+#: .\transport\templates\transport_form.html:224
+msgid "One Way"
+msgstr ""
+
+#: .\transport\templates\transport_form.html:226
+msgid "Return Transfer"
+msgstr ""
+
+#: .\transport\templates\transport_form.html:231
+msgid "Choose category of vehicle:"
+msgstr ""
+
+#: .\transport\templates\transport_form.html:259
+msgid "Passenger dates"
+msgstr ""
+
+#: .\transport\templates\transport_form.html:264
+msgid "Departure point - Arrival point"
+msgstr ""
+
+#: .\transport\templates\transport_form.html:270
+#: .\transport\templates\transport_form.html:327
+msgid "Passenger Number:"
+msgstr ""
+
+#: .\transport\templates\transport_form.html:280
+msgid "Flight:"
+msgstr ""
+
+#: .\transport\templates\transport_form.html:281
+msgid "Your Flight"
+msgstr ""
+
+#: .\transport\templates\transport_form.html:291
+#: .\transport\templates\transport_form.html:296
+msgid "Date and Arrival Time:"
+msgstr ""
+
+#: .\transport\templates\transport_form.html:292
+#: .\transport\templates\transport_form.html:339
+#: .\transport\templates\transport_form.html:353
+msgid "mm/dd/yyyy"
+msgstr ""
+
+#: .\transport\templates\transport_form.html:297
+#: .\transport\templates\transport_form.html:344
+#: .\transport\templates\transport_form.html:358
+msgid "hh:mm"
+msgstr ""
+
+#: .\transport\templates\transport_form.html:305
+msgid "Destination Address:"
+msgstr ""
+
+#: .\transport\templates\transport_form.html:306
+msgid "Your Destination Address"
+msgstr ""
+
+#: .\transport\templates\transport_form.html:313
+#: .\transport\templates\transport_form.html:374
+msgid "Cancel Condition"
+msgstr ""
+
+#: .\transport\templates\transport_form.html:314
+#: .\transport\templates\transport_form.html:375
+msgid "Free cancellation of the order 6 hours earlier the trip"
+msgstr ""
+
+#: .\transport\templates\transport_form.html:321
+msgid "Arrival point - Departure point"
+msgstr ""
+
+#: .\transport\templates\transport_form.html:338
+#: .\transport\templates\transport_form.html:343
+msgid "Date and Departure Time:"
+msgstr ""
+
+#: .\transport\templates\transport_form.html:352
+#: .\transport\templates\transport_form.html:357
+msgid "Date and Time of vehicle delivery:"
+msgstr ""
+
+#: .\transport\templates\transport_form.html:366
+msgid "Address of vehicle delivery:"
+msgstr ""
+
+#: .\transport\templates\transport_form.html:367
+msgid "Your Address of vehicle delivery"
+msgstr ""
+
+#: .\transport\templates\transport_form.html:382
+msgid "Passenger Personal Data:"
+msgstr ""
+
+#: .\transport\templates\transport_form.html:390
+msgid "Your full name"
+msgstr ""
+
+#: .\transport\templates\transport_form.html:395
+msgid "phone number:"
+msgstr ""
+
+#: .\transport\templates\transport_form.html:396
+msgid "Your phone number"
+msgstr ""
+
+#: .\transport\templates\transport_form.html:401
+msgid "email:"
+msgstr ""
+
+#: .\transport\templates\transport_form.html:402
+msgid "Your full email"
+msgstr ""
+
+#: .\transport\templates\transport_form.html:407
+msgid "Inscription on the plate:"
+msgstr ""
+
+#: .\transport\templates\transport_form.html:415
+msgid "By default,it will include full name"
+msgstr ""
+
+#: .\transport\templates\transport_form.html:419
+msgid "Order a transfer"
+msgstr ""

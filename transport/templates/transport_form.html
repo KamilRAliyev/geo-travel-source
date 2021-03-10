@@ -1,0 +1,480 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load static i18n %}
+
+{% block bodyclass %}
+class="multipage not-front page-tours"
+{% endblock %}
+
+{% block main %}
+
+    <div class="clearfix "></div>
+
+    <div class="container" style="margin-top: 5vh;">
+            <h3 class="text-center">{% trans 'Transfer Online booking'%}</h3>
+        <form action="" method="post">{% csrf_token %}
+            <div class="btn btn-primary" style="margin-bottom: 1vh;">
+                  {% trans 'Choose Itinerary'%} &nbsp;&nbsp;  <span class="badge badge-light">1</span>
+            </div>
+            <div class="jumbotron" id="itinerary">
+
+
+                <div class="row">
+                    <div class="col-sm-5">
+                        <h3>{% trans 'From:'%}</h3>
+                        <select class="form-control" name="from" id="from">
+                            <option  value="Heydar Aliyev International Airport" selected>Heydar Aliyev International Airport</option>
+                            <option value="Respublika Hotel">Respublika Hotel</option>
+											<option value="Four Seasons Hotel Baku">Four Seasons Hotel Baku</option>
+											<option value="JW Marriott Absheron Baku Hotel">JW Marriott Absheron Baku Hotel</option>
+											<option value="Fairmont Baku">Fairmont Baku</option>
+											<option value="Hilton Baku">Hilton Baku</option>
+											<option value="Excelsior Hotel Baku">Excelsior Hotel Baku</option>
+											<option value="Hyatt Regency Baku">Hyatt Regency Baku</option>
+											<option value="Sultan Inn Boutique Hotel">Sultan Inn Boutique Hotel</option>
+											<option value="Kempinski Hotel Badamdar Baku">Kempinski Hotel Badamdar Baku</option>
+											<option value="Grand Hotel Europe">Grand Hotel Europe</option>
+											<option value="Sheraton Baku Airport Hotel">Sheraton Baku Airport Hotel</option>
+											<option value="Sapphire Hotel Baku">Sapphire Hotel Baku</option>
+											<option value="The Boutique Palace Hotel">The Boutique Palace Hotel</option>
+											<option value="Atropat Hotel">Atropat Hotel</option>
+											<option value="Palace Hotel Baku">Palace Hotel Baku</option>
+											<option value="Radisson Blu Plaza Hotel, Baku">Radisson Blu Plaza Hotel, Baku</option>
+											<option value="Ambassador">Ambassador</option>
+											<option value="Park Hyatt">Park Hyatt</option>
+											<option value="Tha Crown">Tha Crown</option>
+											<option value="The Landmark Hotel">The Landmark Hotel</option>
+											<option value="Qafqaz Point">Qafqaz Point</option>
+											<option value="Lake Palace">Lake Palace</option>
+											<option value="Ramada Hotel and Suites Baku">Ramada Hotel and Suites Baku</option>
+											<option value="Sapphire Marine&nbsp;">Sapphire Marine&nbsp;</option>
+											<option value="Park Inn by Radisson Azerbaijan Baku Hotel">Park Inn by Radisson Azerbaijan Baku Hotel</option>
+											<option value="Qafqaz Baku City Hotel">Qafqaz Baku City Hotel</option>
+											<option value="Grand Hotel&nbsp;">Grand Hotel&nbsp;</option>
+											<option value="Shah Palace Hotel">Shah Palace Hotel</option>
+											<option value="Bristol Hotel">Bristol Hotel</option>
+											<option value="Austin">Austin</option>
+											<option value="Museum Inn Boutique Hotel&nbsp;">Museum Inn Boutique Hotel&nbsp;</option>
+											<option value="Anatolia">Anatolia</option>
+											<option value="Divan Express Baku">Divan Express Baku</option>
+											<option value="Amber Hotel&nbsp;">Amber Hotel&nbsp;</option>
+											<option value="Gorgud Plaza and Hotels&nbsp;">Gorgud Plaza and Hotels&nbsp;</option>
+											<option value="Chirag Plaza Hotel &amp; Business Center">Chirag Plaza Hotel &amp; Business Center</option>
+											<option value="Primier">Primier</option>
+											<option value="Teatro Boutique Hotel&nbsp;">Teatro Boutique Hotel&nbsp;</option>
+											<option value="Riviera Hotel">Riviera Hotel</option>
+											<option value="AYF&nbsp;Palace hotel">AYF&nbsp;Palace hotel</option>
+											<option value="Safran Hotel">Safran Hotel</option>
+											<option value="Sapphire Inn Hotel">Sapphire Inn Hotel</option>
+											<option value="Ganjali Plaza">Ganjali Plaza</option>
+											<option value="Boulevard Side Hotel">Boulevard Side Hotel</option>
+											<option value="Smith Hotel">Smith Hotel</option>
+											<option value="Azcot Hotel&nbsp;">Azcot Hotel&nbsp;</option>
+											<option value="Icheri Sheher Hotel">Icheri Sheher Hotel</option>
+											<option value="Abu Arena">Abu Arena</option>
+											<option value="Qafqaz Park Hotel">Qafqaz Park Hotel</option>
+											<option value="Hale Kai ">Hale Kai </option>
+											<option value="Central Park Hotel">Central Park Hotel</option>
+											<option value="Alp Inn">Alp Inn</option>
+											<option value="Modern ">Modern </option>
+											<option value="East Legend Panorama Hotel">East Legend Panorama Hotel</option>
+											<option value="Bosfor">Bosfor</option>
+											<option value="Wiseman Hotel &amp; Spa">Wiseman Hotel &amp; Spa</option>
+											<option value="New Baku Hotel">New Baku Hotel</option>
+											<option value="Monolit Plaza">Monolit Plaza</option>
+											<option value="Ariva Hotel">Ariva Hotel</option>
+											<option value="Royal Hotel">Royal Hotel</option>
+											<option value="Deluxe Hotel&nbsp;">Deluxe Hotel&nbsp;</option>
+											<option value="Days Hotel Baku&nbsp;">Days Hotel Baku&nbsp;</option>
+											<option value="AEF Hotel&nbsp;">AEF Hotel&nbsp;</option>
+											<option value="Atrium Hotel Baku International Trade Centre">Atrium Hotel Baku International Trade Centre</option>
+											<option value="Astoria Hotel">Astoria Hotel</option>
+											<option value="Hotel Emerald">Hotel Emerald</option>
+											<option value="Xudaferin Hotel">Xudaferin Hotel</option>
+											<option value="Du Port Hotel&nbsp;">Du Port Hotel&nbsp;</option>
+											<option value="Maiden Tower Hotel">Maiden Tower Hotel</option>
+											<option value="Fawlty Towers">Fawlty Towers</option>
+											<option value="Kichik Gala Hotel">Kichik Gala Hotel</option>
+											<option value="Miraj Inn Hotel">Miraj Inn Hotel</option>
+											<option value="Horizon">Horizon</option>
+											<option value="Karat Inn">Karat Inn</option>
+											<option value="Old City Inn">Old City Inn</option>
+											<option value="Buta Hotel">Buta Hotel</option>
+											<option value="Avand Hotel">Avand Hotel</option>
+											<option value="Rigs Hotel Baku">Rigs Hotel Baku</option>
+											<option value="Gallery&nbsp; Hotel">Gallery&nbsp; Hotel</option>
+											<option value="Sea Port Hotel&nbsp;">Sea Port Hotel&nbsp;</option>
+											<option value="Diplomat Hotel Baku">Diplomat Hotel Baku</option>
+											<option value="Irshad Hotel">Irshad Hotel</option>
+											<option value="Balion Hotel">Balion Hotel</option>
+											<option value="The Empire Hotel">The Empire Hotel</option>
+											<option value="Boyuk Gala Hotel">Boyuk Gala Hotel</option>
+											<option value="Nemi">Nemi</option>
+											<option value="Caspian Palace Hotel">Caspian Palace Hotel</option>
+											<option value="Old Baku Hotel">Old Baku Hotel</option>
+											<option value="Consul Hotel">Consul Hotel</option>
+											<option value="Hotel Han in Baku">Hotel Han in Baku</option>
+											<option value="Alstadt Hotel">Alstadt Hotel</option>
+											<option value="Guest House Inn&amp;Hostel&nbsp;">Guest House Inn&amp;Hostel&nbsp;</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-5" style="margin-right: 0;">
+                        <h3>{% trans 'To:'%}</h3>
+                        <select class="form-control" onchange="" name="to" id="to">
+                            <option  value="Heydar Aliyev International Airport" >Heydar Aliyev International Airport</option>
+                            <option value="Respublika Hotel" selected>Respublika Hotel</option>
+											<option value="Four Seasons Hotel Baku">Four Seasons Hotel Baku</option>
+											<option value="JW Marriott Absheron Baku Hotel">JW Marriott Absheron Baku Hotel</option>
+											<option value="Fairmont Baku">Fairmont Baku</option>
+											<option value="Hilton Baku">Hilton Baku</option>
+											<option value="Excelsior Hotel Baku">Excelsior Hotel Baku</option>
+											<option value="Hyatt Regency Baku">Hyatt Regency Baku</option>
+											<option value="Sultan Inn Boutique Hotel">Sultan Inn Boutique Hotel</option>
+											<option value="Kempinski Hotel Badamdar Baku">Kempinski Hotel Badamdar Baku</option>
+											<option value="Grand Hotel Europe">Grand Hotel Europe</option>
+											<option value="Sheraton Baku Airport Hotel">Sheraton Baku Airport Hotel</option>
+											<option value="Sapphire Hotel Baku">Sapphire Hotel Baku</option>
+											<option value="The Boutique Palace Hotel">The Boutique Palace Hotel</option>
+											<option value="Atropat Hotel">Atropat Hotel</option>
+											<option value="Palace Hotel Baku">Palace Hotel Baku</option>
+											<option value="Radisson Blu Plaza Hotel, Baku">Radisson Blu Plaza Hotel, Baku</option>
+											<option value="Ambassador">Ambassador</option>
+											<option value="Park Hyatt">Park Hyatt</option>
+											<option value="Tha Crown">Tha Crown</option>
+											<option value="The Landmark Hotel">The Landmark Hotel</option>
+											<option value="Qafqaz Point">Qafqaz Point</option>
+											<option value="Lake Palace">Lake Palace</option>
+											<option value="Ramada Hotel and Suites Baku">Ramada Hotel and Suites Baku</option>
+											<option value="Sapphire Marine&nbsp;">Sapphire Marine&nbsp;</option>
+											<option value="Park Inn by Radisson Azerbaijan Baku Hotel">Park Inn by Radisson Azerbaijan Baku Hotel</option>
+											<option value="Qafqaz Baku City Hotel">Qafqaz Baku City Hotel</option>
+											<option value="Grand Hotel&nbsp;">Grand Hotel&nbsp;</option>
+											<option value="Shah Palace Hotel">Shah Palace Hotel</option>
+											<option value="Bristol Hotel">Bristol Hotel</option>
+											<option value="Austin">Austin</option>
+											<option value="Museum Inn Boutique Hotel&nbsp;">Museum Inn Boutique Hotel&nbsp;</option>
+											<option value="Anatolia">Anatolia</option>
+											<option value="Divan Express Baku">Divan Express Baku</option>
+											<option value="Amber Hotel&nbsp;">Amber Hotel&nbsp;</option>
+											<option value="Gorgud Plaza and Hotels&nbsp;">Gorgud Plaza and Hotels&nbsp;</option>
+											<option value="Chirag Plaza Hotel &amp; Business Center">Chirag Plaza Hotel &amp; Business Center</option>
+											<option value="Primier">Primier</option>
+											<option value="Teatro Boutique Hotel&nbsp;">Teatro Boutique Hotel&nbsp;</option>
+											<option value="Riviera Hotel">Riviera Hotel</option>
+											<option value="AYF&nbsp;Palace hotel">AYF&nbsp;Palace hotel</option>
+											<option value="Safran Hotel">Safran Hotel</option>
+											<option value="Sapphire Inn Hotel">Sapphire Inn Hotel</option>
+											<option value="Ganjali Plaza">Ganjali Plaza</option>
+											<option value="Boulevard Side Hotel">Boulevard Side Hotel</option>
+											<option value="Smith Hotel">Smith Hotel</option>
+											<option value="Azcot Hotel&nbsp;">Azcot Hotel&nbsp;</option>
+											<option value="Icheri Sheher Hotel">Icheri Sheher Hotel</option>
+											<option value="Abu Arena">Abu Arena</option>
+											<option value="Qafqaz Park Hotel">Qafqaz Park Hotel</option>
+											<option value="Hale Kai ">Hale Kai </option>
+											<option value="Central Park Hotel">Central Park Hotel</option>
+											<option value="Alp Inn">Alp Inn</option>
+											<option value="Modern ">Modern </option>
+											<option value="East Legend Panorama Hotel">East Legend Panorama Hotel</option>
+											<option value="Bosfor">Bosfor</option>
+											<option value="Wiseman Hotel &amp; Spa">Wiseman Hotel &amp; Spa</option>
+											<option value="New Baku Hotel">New Baku Hotel</option>
+											<option value="Monolit Plaza">Monolit Plaza</option>
+											<option value="Ariva Hotel">Ariva Hotel</option>
+											<option value="Royal Hotel">Royal Hotel</option>
+											<option value="Deluxe Hotel&nbsp;">Deluxe Hotel&nbsp;</option>
+											<option value="Days Hotel Baku&nbsp;">Days Hotel Baku&nbsp;</option>
+											<option value="AEF Hotel&nbsp;">AEF Hotel&nbsp;</option>
+											<option value="Atrium Hotel Baku International Trade Centre">Atrium Hotel Baku International Trade Centre</option>
+											<option value="Astoria Hotel">Astoria Hotel</option>
+											<option value="Hotel Emerald">Hotel Emerald</option>
+											<option value="Xudaferin Hotel">Xudaferin Hotel</option>
+											<option value="Du Port Hotel&nbsp;">Du Port Hotel&nbsp;</option>
+											<option value="Maiden Tower Hotel">Maiden Tower Hotel</option>
+											<option value="Fawlty Towers">Fawlty Towers</option>
+											<option value="Kichik Gala Hotel">Kichik Gala Hotel</option>
+											<option value="Miraj Inn Hotel">Miraj Inn Hotel</option>
+											<option value="Horizon">Horizon</option>
+											<option value="Karat Inn">Karat Inn</option>
+											<option value="Old City Inn">Old City Inn</option>
+											<option value="Buta Hotel">Buta Hotel</option>
+											<option value="Avand Hotel">Avand Hotel</option>
+											<option value="Rigs Hotel Baku">Rigs Hotel Baku</option>
+											<option value="Gallery&nbsp; Hotel">Gallery&nbsp; Hotel</option>
+											<option value="Sea Port Hotel&nbsp;">Sea Port Hotel&nbsp;</option>
+											<option value="Diplomat Hotel Baku">Diplomat Hotel Baku</option>
+											<option value="Irshad Hotel">Irshad Hotel</option>
+											<option value="Balion Hotel">Balion Hotel</option>
+											<option value="The Empire Hotel">The Empire Hotel</option>
+											<option value="Boyuk Gala Hotel">Boyuk Gala Hotel</option>
+											<option value="Nemi">Nemi</option>
+											<option value="Caspian Palace Hotel">Caspian Palace Hotel</option>
+											<option value="Old Baku Hotel">Old Baku Hotel</option>
+											<option value="Consul Hotel">Consul Hotel</option>
+											<option value="Hotel Han in Baku">Hotel Han in Baku</option>
+											<option value="Alstadt Hotel">Alstadt Hotel</option>
+											<option value="Guest House Inn&amp;Hostel&nbsp;">Guest House Inn&amp;Hostel&nbsp;</option>
+                        </select>
+                    </div>
+                </div>
+                <br><br>
+
+                <div class="row">
+                    <input type="radio" name="direction" value="1"  checked><h4 style="display: inline">&nbsp; {% trans 'One Way'%}</h4>
+                    <br>
+                    <input type="radio" name="direction" id="direction" value="2"><h4 style="display: inline">&nbsp; {% trans 'Return Transfer'%}</h4>
+                </div>
+            </div>
+                 <br>
+                <div class="row">
+                    <div style="font-size: 20px;padding-bottom: 10px;border-bottom: 2px solid #e5e5e5; margin: 30px 0 10px 5px;">{% trans 'Choose category of vehicle:'%}</div>
+                </div>
+                <div class="row">
+                    {% for t in transports %}
+                    <div class="col-12 col-sm-6 col-md-4" style="margin-bottom: 1vh;">
+                       <label style="width: 100%">
+                          <input type="radio" class="radio1" name="radio" value="{{ t.pk }}">
+                          <div class="box">
+                            <div>
+                                <img src="{{ t.image.url }}" style= "width: 90%; height: 25vh">
+                            </div>
+                              <div class="row"><span><bold>{{ t.category }}</bold></span></div>
+                              <div class="row"><p style="">{{ t.passenger }}</p></div>
+                              <div class="row"><p style="">{{ t.name }}</p></div>
+                              <div class="row"><span class="veh_price">${{ t.price }}</span></div>
+
+                          </div>
+                        </label>
+                    </div>
+                    {% endfor %}
+
+
+
+                </div>
+
+            <br>
+            <br>
+            <div class="btn btn-primary" style="margin-bottom: 1vh;">
+                      {% trans 'Passenger dates'%} &nbsp;&nbsp;  <span class="badge badge-light">2</span>
+                </div>
+            <div class="row">
+                <div class="col-12 col-sm-6">
+                    <div class="jumbotron" >
+                        <p id="dap1" style="text-align: center; font-weight: bold">{% trans 'Departure point - Arrival point'%}</p>
+                    <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label class="label" style="color: grey" for="pn1">{% trans 'Passenger Number:'%}</label>
+                                                    <input required type="number" class="form-control" id="pn1" name="passenger_number1" value="1">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label class="label" style="color: grey" for="f1">{% trans 'Flight:'%}</label>
+                                                    <input required type="text" id="f1" class="form-control" name="fly1" placeholder="{% trans 'Your Flight'%}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label class="label" style="color: grey" for="datepick1">{% trans 'Date and Arrival Time:'%}</label>
+                                                    <input required type="text" id="datepick1" class="form-control input" name="date1" placeholder="{% trans 'mm/dd/yyyy'%}" >
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                 <label class="label" style="color: grey" for="time1">{% trans 'Date and Arrival Time:'%}</label>
+                                                <input required type="text" id="time1" name="time1" class="form-control" placeholder="{% trans 'hh:mm'%}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label class="label" style="color: grey" for="dest_addr1">{% trans 'Destination Address:'%}</label>
+                                                    <input required type="text" id="dest_addr1" class="form-control" name="dest_addr1" value="{% trans 'Your Destination Address'%}" onblur="if(this.value=='') this.value='Your Destination Address'" onfocus="if(this.value =='Your Destination Address' ) this.value=''">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <h5 style="color: grey; font-weight: bold">{% trans 'Cancel Condition'%}</h5>
+                                    <h6 >{% trans 'Free cancellation of the order 6 hours earlier the trip'%}</h6>
+
+                                </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6" id="second_tab" style="display: none;">
+                    <div class="jumbotron">
+                        <p style="text-align: center; font-weight: bold" id="dap2">{% trans 'Arrival point - Departure point'%}</p>
+                        <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label class="label" style="color: grey" for="pn2">{% trans 'Passenger Number:'%}</label>
+                                                    <input type="number" class="form-control" id="pn2" name="passenger_number2" value="1">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label class="label" style="color: grey" for="datepick2">{% trans 'Date and Departure Time:'%}</label>
+                                                    <input type="text" id="datepick2" class="form-control input" name="date2" placeholder="{% trans 'mm/dd/yyyy'%}" >
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                 <label class="label" style="color: grey" for="time2">{% trans 'Date and Departure Time:'%}</label>
+                                                <input type="text" id="time2" name="time2" class="form-control" placeholder="{% trans 'hh:mm'%}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label class="label" style="color: grey" for="datepick3">{% trans 'Date and Time of vehicle delivery:'%}</label>
+                                                    <input type="text" id="datepick3" class="form-control input" name="date3" placeholder="{% trans 'mm/dd/yyyy'%}" >
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                 <label class="label" style="color: grey" for="time3">{% trans 'Date and Time of vehicle delivery:'%}</label>
+                                                <input type="text" id="time3" name="time3" class="form-control" placeholder="{% trans 'hh:mm'%}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label class="label" style="color: grey" for="dest_addr2">{% trans 'Address of vehicle delivery:'%}</label>
+                                                    <input type="text" id="dest_addr2" class="form-control" name="dest_addr2" placeholder="{% trans 'Your Address of vehicle delivery'%}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <h5 style="color: grey; font-weight: bold">{% trans 'Cancel Condition'%}</h5>
+                                    <h6 >{% trans 'Free cancellation of the order 6 hours earlier the trip'%}</h6>
+
+                                </div>
+                    </div>
+                    </div>
+            </div>
+            <div class="jumbotron">
+               <p style="text-align: center; font-weight: bold">{% trans 'Passenger Personal Data:'%}</p>
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="label" style="color: grey" for="full_name">{% trans 'Full Name:'%}</label>
+                                        <input  required type="text" class="form-control" id="full_name" name="full_name" placeholder="{% trans 'Your full name'%}">
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="label" style="color: grey" for="mobile">{% trans 'phone number:'%}</label>
+                                        <input required type="text" class="form-control" id="mobile" name="mobile" placeholder="{% trans 'Your phone number'%}">
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="label" style="color: grey" for="email">{% trans 'email:'%}</label>
+                                        <input required type="text" class="form-control" id="email" name="email" placeholder="{% trans 'Your full email'%}">
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label class="label" style="color: grey" for="plate">{% trans 'Inscription on the plate:'%}</label>
+                                        <textarea name="plate" id="plate" cols="30" rows="7"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md 6">
+                        <textarea name="plateshow" id="pokazuxa" style="resize: none; font-size: 25px; text-align:center;" cols="30" rows="7" disabled>{% trans 'By default,it will include full name'%}</textarea>
+                    </div>
+                </div>
+            </div>
+        <button type="submit" class="btn-default btn-cf-reserve">{% trans 'Order a transfer'%}</button>
+        </form>
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript" >
+        $(document).ready(function(){      //Add this line (and it's closing line)
+            $("#datepick1").datepicker().attr('readonly', 'readonly');
+            $("#datepick2").datepicker().attr('readonly', 'readonly');
+            $("#datepick3").datepicker().attr('readonly', 'readonly');
+
+            {# changing value of  pasenger date header#}
+            function changeh(){
+                let val1 = $("#from").val();
+                let val2 = $("#to").val();
+                $("#dap1").text(val1 + " - " +val2);
+                $("#dap2").text(val2 + " - " +val1);
+            }
+            changeh();
+            $("#from").change(function () {
+                changeh();
+            });
+            $("#to").change(function () {
+                changeh();
+            });
+
+            $("input[name='direction']").change(function(e){
+                if($(this).val() == '2') {
+                   $("#second_tab").css('display','block');
+                   $(".veh_price").each(function() {
+                        let old = $(this).text();
+                        $(this).text(old+"+"+old)});
+                } else {
+                    $("#second_tab").css('display','none');
+                    $(".veh_price").each(function() {
+                        let old = $(this).text().split('+');
+                        $(this).text(old[0])});
+                }
+            });
+
+            function pokazuxa(){
+                let name = "";
+                let plate = "";
+                if($("#full_name").val()){
+                    name = $("#full_name").val();
+                }
+                if($("#plate").val()){
+                    plate = $("#plate").val();
+                }
+                $("#pokazuxa").text(name+"\n"+plate);
+            }
+
+            $("#full_name").change(function () {
+                pokazuxa();
+            });
+            $("#plate").change(function () {
+                pokazuxa();
+            });
+        });
+    </script>
+{% endblock %}

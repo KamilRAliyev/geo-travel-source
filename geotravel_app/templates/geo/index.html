@@ -1,0 +1,680 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load  static i18n %}
+
+{% block bodyclass %}
+class="onepage front" data-spy="scroll" data-target="#top1" data-offset="202"
+{% endblock bodyclass %}
+
+{% block load %}
+<div id="load"></div>
+{% endblock load %}
+
+{% block main %}
+        <div id="home">
+            {% include "geo/index_slider.html" %}
+            <div class="slider_tabs">
+                <div class="tabs1">
+                    <div class="tabs1_tabs">
+                        <div class="container">
+                            <ul>
+                                <li><a href="#tabs-5">{% trans 'Tours' %}</a></li>
+                                <li><a onclick="$('#tra').onclick($(location).attr('href','/transport/rentacar/')); " id=""   href="" >{% trans 'Transport' %}</a></li>
+                                <li><a onclick="$('#tra').onclick($(location).attr('href','/guides/'));" id=""   href="">{% trans 'Guide' %}</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tabs1_content">
+                        <div class="container">
+
+                            <div id="tabs-5">
+                                <form action="" class="form1" method="post">
+                                    {% csrf_token %}
+                                    <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm-4 col-md-6">
+                                            <div class="select1_wrapper">
+                                                
+                                                <label>{% trans 'City:' %}</label>
+                                                <div class="select1_inner">
+                                                    <select class="select2 select" name="city" style="width: 100%">
+					                                        <option value="0">{% trans 'region, city' %}</option>
+                                                            <option value="Aghdam">Aghdam</option>
+                                                            <option value="Astara">Astara</option>
+                                                            <option value="Gazakh">Gazakh</option>
+                                                            <option value="Ismailli">Ismailli</option>
+                                                            <option value="Masalli">Masalli</option>
+                                                            <option value="Naftalan">Naftalan</option>
+                                                            <option value="Oghuz">Oghuz</option>
+                                                            <option value="Shahdag">Shahdag</option>
+                                                            <option value="Shamkir">Shamkir</option>
+                                                            <option value="Shemakha">Shemakha</option>
+                                                            <option value="Tufandag">Tufandag</option>
+                                                            <option value="Zagatala">Zagatala</option>
+                                                            <option value="Baku">Baku</option>
+                                                            <option value="Balakan">Balakan</option>
+                                                            <option value="Gabala">Gabala</option>
+                                                            <option value="Gakh">Gakh</option>
+                                                            <option value="Gremi">Gremi</option>
+                                                            <option value="Guba">Guba</option>
+                                                            <option value="Gusar">Gusar</option>
+                                                            <option value="Gandja">Gandja</option>
+                                                            <option value="Kazbeghi">Kazbeghi</option>
+                                                            <option value="Lagodekhi">Lagodekhi</option>
+                                                            <option value="Lahich">Lahich</option>
+                                                            <option value="Lenkeran">Lenkeran</option>
+                                                            <option value="Lerik">Lerik</option>
+                                                            <option value="Mingechevir">Mingechevir</option>
+                                                            <option value="Mtskheta">Mtskheta</option>
+                                                            <option value="Nahchivan">Nahchivan</option>
+                                                            <option value="Oghuz">Oghuz</option>
+                                                            <option value="Siyezan">Siyezan</option>
+                                                            <option value="Sumgait">Sumgait</option>
+                                                            <option value="Tbilisi">Tbilisi</option>
+                                                            <option value="Shabran">Shabran</option>
+                                                            <option value="Shahdag">Shahdag</option>
+                                                            <option value="Sheki">Sheki</option>
+                                                            <option value="Shemakha">Shemakha</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3 col-md-4 ">
+                                            <div class="select1_wrapper select2_wrapper">
+                                                <label>{% trans 'Num of Days' %}</label>
+                                                <div class="select1_inner select2_inner">
+                                                    <select class="select2 select select3" name="num_days" style="width: 100%">
+                                                        <option value="0">All</option>
+                                                        <option value="1">01</option>
+                                                        <option value="2">02</option>
+                                                        <option value="3">03</option>
+                                                        <option value="4">04</option>
+                                                        <option value="5">05</option>
+                                                        <option value="6">06</option>
+                                                        <option value="7">07</option>
+                                                        <option value="8">08</option>
+                                                        <option value="8">09</option>
+                                                        <option value="8">10</option>
+                                                        <option value="8">11</option>
+                                                        <option value="8">12</option>
+                                                        <option value="8">13</option>
+                                                        <option value="8">14</option>
+                                                        <option value="8">15</option>
+                                                        <option value="8">16</option>
+                                                        <option value="8">17</option>
+                                                        <option value="8">18</option>
+                                                        <option value="8">19</option>
+                                                        <option value="8">20</option>
+                                                        <option value="8">21</option>
+                                                        <option value="8">22</option>
+                                                        <option value="8">23</option>
+                                                        <option value="8">24</option>
+                                                        <option value="8">25</option>
+                                                        <option value="8">26</option>
+                                                        <option value="8">27</option>
+                                                        <option value="8">28</option>
+                                                        <option value="8">29</option>
+                                                        <option value="8">30</option>
+                                                        <option value="8">31</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3 col-md-2">
+                                            <div class="button1_wrapper">
+                                                <button type="submit" class="btn-default btn-form1-submit"><i
+                                                        class="fa fa-search"></i>{% trans 'search now' %}
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div id="services">
+            <div class="container">
+    
+                <div class="title1">{% trans 'Most popular Tours:' %}</div>
+                <p class="title2">{% trans 'Each year we have thousands of guests from all over the World. Believe us we know what we are offering.' %}</p>
+
+
+            </div>
+        </div>
+    
+        <div id="tours">
+            <div class="clearfix">
+                {% for t in tour %}
+                    {% if t.image %}
+                        <div class="tour1 clearfix">
+                            <a href="{{ t.get_absolute_url }}" class="clearfix">
+
+                                    <figure>
+                                        <img src="{{ t.image.url }}" alt="" class="img-responsive">
+                                    </figure>
+
+
+
+                                <div class="caption">
+                                    <div class="txt1">{{ t.name }}</div>
+                                    <div class="txt2">
+                                        <div class="stars1">
+                                            {% if t.rating == 1 %}
+                                                <img src={% static 'images/star1.png' %} alt="{{ tour.rating }} ">
+                                            {% endif %}
+                                            {% if t.rating == 2 %}
+                                                <img src={% static 'images/star1.png' %} alt="{{ tour.rating }}">
+                                                <img src={% static 'images/star1.png' %} >
+                                            {% endif %}
+                                            {% if t.rating == 3 %}
+                                                <img src={% static 'images/star1.png' %} alt="{{ tour.rating }}">
+                                                <img src={% static 'images/star1.png' %} >
+                                                <img src={% static 'images/star1.png' %} >
+                                            {% endif %}
+                                            {% if t.rating == 4 %}
+                                                <img src={% static 'images/star1.png' %} alt="{{ tour.rating }}">
+                                                <img src={% static 'images/star1.png' %} >
+                                                <img src={% static 'images/star1.png' %} >
+                                                <img src={% static 'images/star1.png' %} >
+                                            {% endif %}
+                                            {% if t.rating == 5 %}
+                                                <img src={% static 'images/star1.png' %} alt="{{ tour.rating }}">
+                                                <img src={% static 'images/star1.png' %} >
+                                                <img src={% static 'images/star1.png' %} >
+                                                <img src={% static 'images/star1.png' %} >
+                                                <img src={% static 'images/star1.png' %} >
+                                            {% endif %}
+                                        </div>
+                                        <div class="rev-num">{{ t.city }}</div>
+                                    </div>
+                                    <div class="txt3">${{ t.price }}</div>
+                                </div>
+                            </a>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    
+{#        <div id="partners">#}
+{#            <div class="container">#}
+{#    #}
+{#                <div class="title1">Our partners & Investors</div>#}
+{#    #}
+{#                <div class="title2">Lorem ipsum dolor sit amet, la france dio perpendum mobile, lacrimosa non troppo<br>vitae#}
+{#                    el mundo, abricoso trkae mundo la vita nova.#}
+{#                </div>#}
+{#    #}
+{#                <div class="row">#}
+{#                    <div class="col-sm-2">#}
+{#                        <div class="partner1">#}
+{#                            <a href="#" class="clearfix">#}
+{#                                <figure>#}
+{#                                    <img src="http://via.placeholder.com/170x92" alt="" class="img-responsive">#}
+{#                                    <img src="http://via.placeholder.com/170x92/13e7ff" alt="" class="img-responsive hover">#}
+{#                                </figure>#}
+{#                            </a>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="col-sm-2">#}
+{#                        <div class="partner1">#}
+{#                            <a href="#" class="clearfix">#}
+{#                                <figure>#}
+{#                                    <img src="http://via.placeholder.com/170x92" alt="" class="img-responsive">#}
+{#                                    <img src="http://via.placeholder.com/170x92/13e7ff" alt="" class="img-responsive hover">#}
+{#                                </figure>#}
+{#                            </a>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="col-sm-2">#}
+{#                        <div class="partner1">#}
+{#                            <a href="#" class="clearfix">#}
+{#                                <figure>#}
+{#                                    <img src="http://via.placeholder.com/170x92" alt="" class="img-responsive">#}
+{#                                    <img src="http://via.placeholder.com/170x92/13e7ff" alt="" class="img-responsive hover">#}
+{#                                </figure>#}
+{#                            </a>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="col-sm-2">#}
+{#                        <div class="partner1">#}
+{#                            <a href="#" class="clearfix">#}
+{#                                <figure>#}
+{#                                    <img src="http://via.placeholder.com/170x92" alt="" class="img-responsive">#}
+{#                                    <img src="http://via.placeholder.com/170x92/13e7ff" alt="" class="img-responsive hover">#}
+{#                                </figure>#}
+{#                            </a>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="col-sm-2">#}
+{#                        <div class="partner1">#}
+{#                            <a href="#" class="clearfix">#}
+{#                                <figure>#}
+{#                                    <img src="http://via.placeholder.com/170x92" alt="" class="img-responsive">#}
+{#                                    <img src="http://via.placeholder.com/170x92/13e7ff" alt="" class="img-responsive hover">#}
+{#                                </figure>#}
+{#                            </a>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="col-sm-2">#}
+{#                        <div class="partner1">#}
+{#                            <a href="#" class="clearfix">#}
+{#                                <figure>#}
+{#                                    <img src="http://via.placeholder.com/170x92" alt="" class="img-responsive">#}
+{#                                    <img src="http://via.placeholder.com/170x92/13e7ff" alt="" class="img-responsive hover">#}
+{#                                </figure>#}
+{#                            </a>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#    #}
+{#    #}
+{#            </div>#}
+{#        </div>#}
+{#    #}
+
+        <div id="services">
+            <div class="container">
+
+                <div class="title1">{% trans 'Most popular Cars of week:' %}</div>
+
+
+            </div>
+        </div>
+        <div id="parallax1" class="parallax">
+            <div class="bg1 parallax-bg" style="background-image: url('https://geotravel.s3.amazonaws.com/static/images/buses.jpg');" id="myDiv"></div>
+
+                <div class="overlay" >
+
+                </div>
+
+            <div class="parallax-content">
+                <div class="container">
+    
+                    <div id="hot_wrapper ">
+                        {% for car in rent_a_car %}
+                            {% if car.image %}
+                                 <div data-src="{{  car.image.url  }}"></div>
+                            {% endif %}
+                        {% endfor %}
+                        <div id="hot_inner">
+                            <div class="">
+                                <div id="hot">
+                                    <a class="hot_prev" href="#"><span></span></a>
+                                    <a class="hot_next" href="#"><span></span></a>
+                                    <div class="">
+                                        <div class="carousel-box">
+                                            <div class="inner">
+                                                <div class="carousel main">
+                                                    <ul >
+                                                        {% for car in rent_a_car %}
+                                                            {% if car.image %}
+                                                            <li>
+                                                                <div class="hot">
+                                                                    <div class="hot_inner" ><a href="{{ car.get_absolute_url }}" style="text-decoration: none; color: white">
+                                                                        <div class="txt1">{{ car.name }} </div>
+                                                                        <div class="txt2" >{% trans 'from' %}${{ car.price  }}</div>
+                                                                    </a></div>
+                                                                </div>
+                                                            </li>
+
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+    
+                </div>
+            </div>
+        </div>
+    
+{#        <div id="popular">#}
+{#            <div class="container">#}
+{#    #}
+{#                <div class="title1">Most Popular Travel Countries</div>#}
+{#    #}
+{#                <div class="title2">Lorem ipsum dolor sit amet, la france dio perpendum mobile, lacrimosa.</div>#}
+{#    #}
+{#                <br><br>#}
+{#    #}
+{#                <div class="row">#}
+{#                    <div class="col-sm-6">#}
+{#                        <div class="row">#}
+{#                            <div class="col-sm-6">#}
+{#                                <div class="city1 clearfix">#}
+{#                                    <a href="tour-details-map.html" class="clearfix">#}
+{#                                        <figure>#}
+{#                                            <img src="http://via.placeholder.com/270x199" alt="" class="img-responsive">#}
+{#                                        </figure>#}
+{#                                        <div class="over"></div>#}
+{#                                        <div class="caption">#}
+{#                                            <div class="txt1">rome - 5 days</div>#}
+{#                                            <div class="txt2"><span>from $235</span> per person</div>#}
+{#                                        </div>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="col-sm-6">#}
+{#                                <div class="city1 clearfix">#}
+{#                                    <a href="tour-details-map.html" class="clearfix">#}
+{#                                        <figure>#}
+{#                                            <img src="http://via.placeholder.com/270x199" alt="" class="img-responsive">#}
+{#                                        </figure>#}
+{#                                        <div class="over"></div>#}
+{#                                        <div class="caption">#}
+{#                                            <div class="txt1">pisa - 4 days</div>#}
+{#                                            <div class="txt2"><span>from $180</span> per person</div>#}
+{#                                        </div>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="row">#}
+{#                            <div class="col-sm-6">#}
+{#                                <div class="city1 clearfix">#}
+{#                                    <a href="tour-details-map.html" class="clearfix">#}
+{#                                        <figure>#}
+{#                                            <img src="http://via.placeholder.com/270x199" alt="" class="img-responsive">#}
+{#                                        </figure>#}
+{#                                        <div class="over"></div>#}
+{#                                        <div class="caption">#}
+{#                                            <div class="txt1">venice - 3 days</div>#}
+{#                                            <div class="txt2"><span>from $195</span> per person</div>#}
+{#                                        </div>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="col-sm-6">#}
+{#                                <div class="city1 clearfix">#}
+{#                                    <a href="tour-details-map.html" class="clearfix">#}
+{#                                        <figure>#}
+{#                                            <img src="http://via.placeholder.com/270x199" alt="" class="img-responsive">#}
+{#                                        </figure>#}
+{#                                        <div class="over"></div>#}
+{#                                        <div class="caption">#}
+{#                                            <div class="txt1">whole italy - 12 days</div>#}
+{#                                            <div class="txt2"><span>from $550</span> per person</div>#}
+{#                                        </div>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="col-sm-6">#}
+{#                        <div class="country country1">#}
+{#    #}
+{#                            <div class="title3">italy, europe</div>#}
+{#                            <p>#}
+{#                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut faucibus, ipsum vel dictum#}
+{#                                eleifend, risus neque dignissim nunc, quis fermentum tortor felis tincidunt massa. Nunc#}
+{#                                velit massa, auctor vel mauris nec, pretium vestibulum risus#}
+{#                            </p>#}
+{#                            <div class="title4">best tours</div>#}
+{#    #}
+{#                            <div class="row">#}
+{#                                <div class="col-sm-4">#}
+{#                                    <ul class="ul1">#}
+{#                                        <li><a href="tour-details-map.html">Rome</a></li>#}
+{#                                        <li><a href="tour-details-map.html">Milan</a></li>#}
+{#                                        <li><a href="tour-details-map.html">Genoa</a></li>#}
+{#                                        <li><a href="tour-details-map.html">Verona</a></li>#}
+{#                                    </ul>#}
+{#                                </div>#}
+{#                                <div class="col-sm-4">#}
+{#                                    <ul class="ul1">#}
+{#                                        <li><a href="tour-details-map.html">Trieste</a></li>#}
+{#                                        <li><a href="tour-details-map.html">Venice</a></li>#}
+{#                                        <li><a href="tour-details-map.html">Bologna</a></li>#}
+{#                                        <li><a href="tour-details-map.html">Florence</a></li>#}
+{#                                    </ul>#}
+{#                                </div>#}
+{#                                <div class="col-sm-4">#}
+{#                                    <ul class="ul1">#}
+{#                                        <li><a href="tour-details-map.html">San Marino</a></li>#}
+{#                                        <li><a href="tour-details-map.html">Siena</a></li>#}
+{#                                        <li><a href="tour-details-map.html">Naples</a></li>#}
+{#                                        <li><a href="tour-details-map.html">Palermo</a></li>#}
+{#                                    </ul>#}
+{#                                </div>#}
+{#                            </div>#}
+{#    #}
+{#                            <br><br>#}
+{#    #}
+{#    #}
+{#                            <p><a href="tours-link.html" class="btn-default btn1">view all places</a></p>#}
+{#    #}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#    #}
+{#                <br>#}
+{#    #}
+{#                <div class="row">#}
+{#                    <div class="col-sm-6">#}
+{#                        <div class="country country2">#}
+{#    #}
+{#                            <div class="title3">france, europe</div>#}
+{#                            <p>#}
+{#                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut faucibus, ipsum vel dictum#}
+{#                                eleifend, risus neque dignissim nunc, quis fermentum tortor felis tincidunt massa. Nunc#}
+{#                                velit massa, auctor vel mauris nec, pretium vestibulum risus#}
+{#                            </p>#}
+{#                            <div class="title4">best tours</div>#}
+{#    #}
+{#                            <div class="row">#}
+{#                                <div class="col-sm-4">#}
+{#                                    <ul class="ul1">#}
+{#                                        <li><a href="tour-details-map.html">Paris</a></li>#}
+{#                                        <li><a href="tour-details-map.html">Versalles</a></li>#}
+{#                                        <li><a href="tour-details-map.html">Orleans</a></li>#}
+{#                                        <li><a href="tour-details-map.html">Nantes</a></li>#}
+{#                                    </ul>#}
+{#                                </div>#}
+{#                                <div class="col-sm-4">#}
+{#                                    <ul class="ul1">#}
+{#                                        <li><a href="tour-details-map.html">Lyon</a></li>#}
+{#                                        <li><a href="tour-details-map.html">Bordeaux</a></li>#}
+{#                                        <li><a href="tour-details-map.html">Toulouse</a></li>#}
+{#                                        <li><a href="tour-details-map.html">Montpelier</a></li>#}
+{#                                    </ul>#}
+{#                                </div>#}
+{#                                <div class="col-sm-4">#}
+{#                                    <ul class="ul1">#}
+{#                                        <li><a href="tour-details-map.html">Mont Blanc</a></li>#}
+{#                                        <li><a href="tour-details-map.html">Marseille</a></li>#}
+{#                                        <li><a href="tour-details-map.html">Cannes</a></li>#}
+{#                                        <li><a href="tour-details-map.html">Nice</a></li>#}
+{#                                    </ul>#}
+{#                                </div>#}
+{#                            </div>#}
+{#    #}
+{#                            <br><br>#}
+{#    #}
+{#    #}
+{#                            <p><a href="tours-link.html" class="btn-default btn1">view all places</a></p>#}
+{#    #}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="col-sm-6">#}
+{#                        <div class="row">#}
+{#                            <div class="col-sm-6">#}
+{#                                <div class="city1 clearfix">#}
+{#                                    <a href="tour-details-map.html" class="clearfix">#}
+{#                                        <figure>#}
+{#                                            <img src="http://via.placeholder.com/270x199" alt="" class="img-responsive">#}
+{#                                        </figure>#}
+{#                                        <div class="over"></div>#}
+{#                                        <div class="caption">#}
+{#                                            <div class="txt1">paris - 5 days</div>#}
+{#                                            <div class="txt2"><span>from $215</span> per person</div>#}
+{#                                        </div>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="col-sm-6">#}
+{#                                <div class="city1 clearfix">#}
+{#                                    <a href="tour-details-map.html" class="clearfix">#}
+{#                                        <figure>#}
+{#                                            <img src="http://via.placeholder.com/270x199" alt="" class="img-responsive">#}
+{#                                        </figure>#}
+{#                                        <div class="over"></div>#}
+{#                                        <div class="caption">#}
+{#                                            <div class="txt1">nice - 7 days</div>#}
+{#                                            <div class="txt2"><span>from $175</span> per person</div>#}
+{#                                        </div>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="row">#}
+{#                            <div class="col-sm-6">#}
+{#                                <div class="city1 clearfix">#}
+{#                                    <a href="tour-details-map.html" class="clearfix">#}
+{#                                        <figure>#}
+{#                                            <img src="http://via.placeholder.com/270x199" alt="" class="img-responsive">#}
+{#                                        </figure>#}
+{#                                        <div class="over"></div>#}
+{#                                        <div class="caption">#}
+{#                                            <div class="txt1">cannes - 7 days</div>#}
+{#                                            <div class="txt2"><span>from $150</span> per person</div>#}
+{#                                        </div>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="col-sm-6">#}
+{#                                <div class="city1 clearfix">#}
+{#                                    <a href="tour-details-map.html" class="clearfix">#}
+{#                                        <figure>#}
+{#                                            <img src="http://via.placeholder.com/270x199" alt="" class="img-responsive">#}
+{#                                        </figure>#}
+{#                                        <div class="over"></div>#}
+{#                                        <div class="caption">#}
+{#                                            <div class="txt1">marseille - 4 days</div>#}
+{#                                            <div class="txt2"><span>from $290</span> per person</div>#}
+{#                                        </div>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#    #}
+{#    #}
+{#            </div>#}
+{#        </div>#}
+    
+        <div id="contacts">
+            <div class="container">
+    
+                <div class="title1">{% trans 'get in touch' %}</div>
+                <div class="title7">{% trans 'contact information' %}</div>
+    
+                <div class="row">
+                    <div class="col-sm-8">
+    
+                        <div id="note"></div>
+                        <div id="fields">
+                            <form id="ajax-contact-form3" class="form-horizontal clearfix"
+                                         action="contact/" method="post">
+                                {% csrf_token %}
+                                    {{ form.non_field_errors }}
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for={{ form.name.id_for_label }}>{% trans 'Your Name' %}</label>
+                                            {{ form.name }}
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for={{ form.email.id_for_label }}>{% trans 'Email' %}</label>
+                                            {{ form.email }}
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label for="{{ form.subject.id_for_label }}">{% trans 'Subject' %}</label>
+                                            {{ form.subject }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label for="{{ form.message.id_for_label }}">{% trans 'Your Message'%}</label>
+                                            {{ form.message }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn-default btn-cf-submit">{% trans 'submit comment'%}</button>
+                            </form>
+                        </div>
+    
+    
+                    </div>
+                    <div class="col-sm-4">
+    
+                        <div class="title5">{% trans 'about us'%}</div>
+    
+                        <p>
+                            {{ site_settings.about_us }}
+                        </p>
+    
+                        <br>
+    
+                        <div class="title5">{% trans 'contact info'%}</div>
+    
+                        <div class="smi phone1">{% trans 'Phone:' %} {{ site_settings.phone_num }}</div>
+                        <div class="smi email1">{% trans 'Email us:' %} <a href="mailto:{{ site_settings.company_email }}">{{ site_settings.company_email }}</a></div>
+                        <div class="smi address1">{% trans 'Address:' %} {{ site_settings.company_address }}</div>
+    
+                        <br>
+    
+                        <div class="social_wrapper">
+                            <ul class="social clearfix">
+                                <li><a href="{{ site_settings.facebook_link }}"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="{{ site_settings.skype_link }}"><i class="fa fa-skype"></i></a></li>
+                                <li><a href="{{ site_settings.vk_link }}"><i class="fa fa-vk"></i></a></li>
+                                <li><a href="https://www.instagram.com/geo.travel.azerbaijan/"><i class="fa fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+    
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+        <!-- <div id="google_map"></div> -->
+    
+
+
+    
+{% endblock main %}
+
+{% block get_rid_of_class %}
+    <script>
+        $('#tab2b').removeClass();
+        $('#tab2b2').removeClass();
+    </script>
+    <script>
+        $('#hot').find('.carousel.main ul');
+    </script>
+{% endblock get_rid_of_class %}

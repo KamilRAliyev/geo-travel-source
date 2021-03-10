@@ -1,0 +1,377 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load static i18n %}
+{% block bodyclass %}
+class="multipage not-front page-tours"
+{% endblock %}
+
+{% block main %}
+<div class="overlay"></div>
+
+
+    <div id="google_map2_wrapper">
+        <div id="google_map2"></div>
+    </div>
+
+
+    <div class="breadcrumbs2_wrapper">
+        <div class="container">
+            <div class="breadcrumbs1"><a href={% url 'home' %}>{% trans 'Home'%}</a><span>/</span><a
+                    href="">{% trans 'Pages'%}</a><span>/</span>{% trans 'Vehicle Detail:'%}{{ vehicle.name }}
+            </div>
+        </div>
+    </div>
+
+    <div id="tours2">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 col-md-3">
+                        {% if message %}
+                            <div class="alert alert-success" style="margin: 1rem ;" onclick="$('.alert').alert('close')" role="alert">
+                                {{ message }}
+                            </div>
+                        {% endif %}
+                    <div class="tours_sidebar">
+
+                        <div class="title3">{{ vehicle.name }}</div>
+
+                        <form id="ajax-contact-form2" class="form-horizontal" action="/transport/rentacar/car/{{ vehicle.slug }}/order" method="post">{% csrf_token %}
+                            <div class="row">
+                                {{ form.non_field_errors }}
+                                {{ form.field_errors }}
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                {{ form.full_name.errors }}
+                                                <label class="label" for="{{ form.full_name.id_for_label }}" >{% trans 'Full Name:'%}</label>
+                                                {{ form.full_name }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                {{ form.email.errors }}
+                                                <label class="label" for="{{ form.email.id_for_label }}" >{% trans 'Email:'%}</label>
+                                                {{ form.email}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                {{ form.start_date.errors }}
+                                                <label class="label" for="{{ form.start_date.id_for_label }}" >{% trans 'Start Date:'%}</label>
+                                                <div class="col-sm-12">
+                                                    {{ form.start_date}}
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                {{ form.end_date.errors }}
+                                                <label class="label" for="{{ form.end_date.id_for_label }}" >{% trans 'End Date:'%}</label>
+                                                <div class="col-sm-12">
+                                                    {{ form.end_date}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-7">
+                                    <div class="pricetitle">{% trans 'price:'%}</div>
+                                </div>
+                                <div class="col-sm-5">
+                                    <div id="real_price" style="display: none;">{{ vehicle.price  }}</div>
+                                    <div id="price" class="price">${{ vehicle.price  }}</div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-default btn-cf-reserve">{% trans 'RESERVE NOW'%}</button>
+                        </form>
+
+
+                        <div class="divider2"></div>
+
+{#                        <div class="title3">categories</div>#}
+{##}
+{#                        <div class="accordion accordion1">#}
+{#                            <h3>tours</h3>#}
+{#                            <div>#}
+{#                                <ul class="ul2">#}
+{#                                    {% for cat in category %}#}
+{#                                    <li><a href={{ cat.get_absolute_url }}>{{ cat.name }}</a></li>#}
+{#                                    {% endfor %}#}
+{#                                </ul>#}
+{#                            </div>#}
+{#                        </div>#}
+
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="col-sm-9">
+
+                    <div class="blog_content">
+
+                        <div class="post post-full">
+                            <div class="post-header">
+                                <div class="post-slide">
+                                    <div id="sl3">
+                                        <a class="sl3_prev" href="#"></a>
+                                        <a class="sl3_next" href="#"></a>
+                                        <div class="sl3_pagination"></div>
+                                        <div class="carousel-box">
+                                            <div class="inner">
+                                                <div class="carousel main">
+                                                    <ul>
+
+                                                        <li>
+                                                            <div class="sl3">
+                                                                <div class="sl3_inner">
+                                                                    <img src="{{ vehicle.image.url }}" alt=""
+                                                                         class="img-responsive">
+                                                                </div>
+                                                            </div>
+                                                        </li>
+
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="post-story">
+                                <h3>{{ vehicle.name }}</h3>
+                                <div class="additional clearfix">
+                                    <div class="author">{{ vehicle.category.name }} </div>
+                                    <div class="date">/ {{ vehicle.passenger }} {% trans 'passengers'%} </div>
+                                    <div class="ncom">/ {{ vehicle.engine }} / {{ vehicle.transmission|title }} {% trans 'transmission'%} </div>
+                                    <div class="cat">/ {{ vehicle.body_style }} / {{ vehicle.year }} {% trans 'model'%}</div>
+                                </div>
+                                <div class="additional clearfix">
+{#                                    <div class="author"><i class="fa fa-edit"></i><a href="#">Most Popular#}
+{#                                        Facilities:</a></div>#}
+{#                                    <div class="date"></div>#}
+{#                                    <div class="ncom"></div>#}
+{#                                    <div class="cat"></i></div>#}
+                                </div>
+                                <div class="post-story-body container">
+                                    {% if LANGUAGE_CODE == "ru" %}
+                                        {{ vehicle.content_ru|safe }}
+                                    {% elif LANGUAGE_CODE == "es" %}
+                                        {{ vehicle.content_es|safe }}
+                                    {% elif LANGUAGE_CODE == "bg" %}
+                                        {{ vehicle.content_bg|safe }}
+                                    {% else %}
+                                        {{ vehicle.content|safe }}
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+
+{#                        <div class="share_post clearfix">#}
+{#                            <div class="txt1">Share Tour:</div>#}
+{#                            <div class="social2_wrapper">#}
+{#                                <ul class="social2 clearfix">#}
+{#                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>#}
+{#                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>#}
+{#                                    <li><a href="#"><i class="fa fa-pinterest"></i></a></li>#}
+{#                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>#}
+{#                                </ul>#}
+{#                            </div>#}
+{#                        </div>#}
+
+
+{#                        <div class="num-comments clearfix">#}
+{#                            <div class="left">32 Comments</div>#}
+{#                            <div class="right"><i class="fa fa-edit"></i><a href="#">Leave a comment now</a></div>#}
+{#                        </div>#}
+{##}
+{#                        <div class="comment-block clearfix">#}
+{#                            <figure>#}
+{#                                <img src="http://via.placeholder.com/97x97" alt="" class="img-responsive">#}
+{#                            </figure>#}
+{#                            <div class="caption">#}
+{#                                <div class="top clearfix">#}
+{#                                    <div class="txt1"><a href="#">Sam Isbister</a></div>#}
+{#                                    <div class="txt2">1 day ago &nbsp; / &nbsp; <a href="#">Report</a> &nbsp; / &nbsp;#}
+{#                                        <a href="#">Reply</a></div>#}
+{#                                </div>#}
+{#                                <div class="txt3">#}
+{#                                    <p>#}
+{#                                        Fusce consequat ipsum in nibh lacinia mollis. Nulla blandit aliquet magna.#}
+{#                                        Mauris condimentum mattis lacus, non tincidunt sem porttitor at. Pellentesque#}
+{#                                        eget porta leo, Donec dictum mattis dignissim.#}
+{#                                    </p>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{##}
+{#                        <div class="comment-block left1 clearfix">#}
+{#                            <figure>#}
+{#                                <img src="http://via.placeholder.com/61x61" alt="" class="img-responsive">#}
+{#                            </figure>#}
+{#                            <div class="caption">#}
+{#                                <div class="top clearfix">#}
+{#                                    <div class="txt1"><a href="#">UnitedThemes</a></div>#}
+{#                                    <div class="txt2">2 days ago &nbsp; / &nbsp; <a href="#">Report</a> &nbsp; / &nbsp;#}
+{#                                        <a href="#">Reply</a></div>#}
+{#                                </div>#}
+{#                                <div class="txt3">#}
+{#                                    <p>#}
+{#                                        Nullam volutpat urna leo, a ullamcorper dui porta pharetra.#}
+{#                                    </p>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{##}
+{#                        <div class="comment-block left1 clearfix">#}
+{#                            <figure>#}
+{#                                <img src="http://via.placeholder.com/61x61" alt="" class="img-responsive">#}
+{#                            </figure>#}
+{#                            <div class="caption">#}
+{#                                <div class="top clearfix">#}
+{#                                    <div class="txt1"><a href="#">Tran Mau Tri Tam</a></div>#}
+{#                                    <div class="txt2">2 days ago &nbsp; / &nbsp; <a href="#">Report</a> &nbsp; / &nbsp;#}
+{#                                        <a href="#">Reply</a></div>#}
+{#                                </div>#}
+{#                                <div class="txt3">#}
+{#                                    <p>#}
+{#                                        Fusce consequat ipsum in nibh lacinia mollis. Nulla blandit aliquet magna.#}
+{#                                        Mauris condimentum mattis lacus, non tincidunt sem porttitor at. Pellentesque#}
+{#                                        eget porta leo, Donec dictum mattis.#}
+{#                                    </p>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{##}
+{##}
+{#                        <div class="live-comment">#}
+{#                            <div class="live-comment-title">Leave a Reply</div>#}
+{#                            <div class="live-comment-form">#}
+{##}
+{#                                <div id="note3"></div>#}
+{#                                <div id="fields3">#}
+{#                                    <form id="ajax-contact-form3" class="form-horizontal clearfix"#}
+{#                                          action="javascript:;">#}
+{#                                        <div class="row">#}
+{#                                            <div class="col-sm-6">#}
+{##}
+{#                                                <div class="form-group">#}
+{#                                                    <i class="fa fa-user"></i>#}
+{#                                                    <label for="inputName">Your Name</label>#}
+{#                                                    <input type="text" class="form-control" id="inputName" name="name"#}
+{#                                                           value="Full Name"#}
+{#                                                           onBlur="if(this.value=='') this.value='Full Name'"#}
+{#                                                           onFocus="if(this.value =='Full Name' ) this.value=''">#}
+{#                                                </div>#}
+{##}
+{#                                                <div class="form-group">#}
+{#                                                    <i class="fa fa-envelope"></i>#}
+{#                                                    <label for="inputEmail">Email</label>#}
+{#                                                    <input type="text" class="form-control" id="inputEmail" name="email"#}
+{#                                                           value="E-mail address"#}
+{#                                                           onBlur="if(this.value=='') this.value='E-mail address'"#}
+{#                                                           onFocus="if(this.value =='E-mail address' ) this.value=''">#}
+{#                                                </div>#}
+{##}
+{#                                                <div class="form-group">#}
+{#                                                    <i class="fa fa-comments"></i>#}
+{#                                                    <label for="inputSubject">Website</label>#}
+{#                                                    <input type="text" class="form-control" id="inputSubject"#}
+{#                                                           name="subject" value="Subject"#}
+{#                                                           onBlur="if(this.value=='') this.value='Subject'"#}
+{#                                                           onFocus="if(this.value =='Subject' ) this.value=''">#}
+{#                                                </div>#}
+{##}
+{#                                            </div>#}
+{#                                            <div class="col-sm-6">#}
+{##}
+{#                                                <div class="form-group">#}
+{#                                                    <label for="inputMessage">Your Message</label>#}
+{#                                                    <textarea class="form-control" rows="9" id="inputMessage"#}
+{#                                                              name="content"#}
+{#                                                              onBlur="if(this.value=='') this.value='Message'"#}
+{#                                                              onFocus="if(this.value =='Message' ) this.value=''">Message</textarea>#}
+{#                                                </div>#}
+{##}
+{#                                            </div>#}
+{##}
+{#                                        </div>#}
+{##}
+{#                                        <button type="submit" class="btn-default btn-cf-submit3">Submit</button>#}
+{#                                    </form>#}
+{#                                </div>#}
+{##}
+{#                            </div>#}
+{#                        </div>#}
+{##}
+{##}
+{#                    </div>#}
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    </div>
+{% endblock %}
+{% block js %}
+    <script type="text/javascript" >
+        $(document).ready(function(){      //Add this line (and it's closing line)
+            $("#datepick1").datepicker().attr('readonly', 'readonly');
+            $("#datepick2").datepicker().attr('readonly', 'readonly');
+
+});
+        $(document).ready(function() {
+                                let mydate;
+                                let mydate2;
+                                function price(val1, val2) {
+                                    let days = Math.round((val2 - val1) / (1000 * 60 * 60 * 24));
+                                    {#let price = parseFloat($("#real_price").text());#}
+                                    console.log((days * price).toString());
+                                    let prices = parseFloat($("#real_price").text());
+                                    $("#price").text('$'+(prices*days).toString());
+                                }
+
+                                $('#datepick1').change(function () {
+                                    let date1_str = $("#datepick1").val();
+                                    let parts = date1_str.split('/');
+                                    mydate = new Date(parts[2], parts[0] , parts[1]);
+                                    if (mydate2) {
+                                        price(mydate, mydate2);
+                                    }
+                                });
+                                $('#datepick2').change(function () {
+                                    let date2_str = $("#datepick2").val();
+                                    let parts = date2_str.split('/');
+                                    mydate2 = new Date(parts[2], parts[0] , parts[1]);
+                                    if (mydate) {
+                                        price(mydate, mydate2);
+                                    }
+                                });
+
+
+                            });
+    </script>
+{% endblock %}

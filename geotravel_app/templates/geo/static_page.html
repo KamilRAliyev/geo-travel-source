@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{% block bodyclass %}
+class="multipage not-front page-about"
+{% endblock bodyclass %}
+
+{% block main %}
+    <div id="parallax2" class="parallax">
+        <div class="bg2 parallax-bg" style="background-image: url({{ content.image.url }})"></div>
+        <div class="overlay"></div>
+        <div class="parallax-content">
+            <div class="container">
+
+                <div class="txt1">{{ content.name }}</div>
+
+
+            </div>
+        </div>
+    </div>
+    <div id="about">
+        <div class="container">
+        <div class="row">
+            {% if form %}
+        <div class="col-sm-5 col-md-3">
+            {% block form %}
+            {% endblock %}
+        </div>
+            {% endif %}
+
+            {% if form %}
+                <div class="col-sm-7 col-md-9">
+                    {% if LANGUAGE_CODE == "ru" %}
+                        {{ content.content_ru|safe }}
+                    {% elif LANGUAGE_CODE == "es" %}
+                        {{ content.content_es|safe }}
+                    {% elif LANGUAGE_CODE == "bg" %}
+                        {{ content.content_bg|safe }}
+                    {% else %}
+                        {{ content.content|safe }}
+                    {% endif %}
+                </div>
+            {% else %}
+                {% if LANGUAGE_CODE == "ru" %}
+                        {{ content.content_ru|safe }}
+                {% elif LANGUAGE_CODE == "es" %}
+                        {{ content.content_es|safe }}
+                {% else %}
+                        {{ content.content|safe }}
+                {% endif %}
+             {% endif %}
+        </div>
+        </div>
+    </div>
+{% endblock %}
+

@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load static i18n %}
+
+{% block bodyclass %}
+class="multipage not-front page-tours"
+{% endblock %}
+
+{% block main %}
+
+    <div id="parallax2" class="parallax">
+        <div class="bg2 parallax-bg"></div>
+        <div class="overlay"></div>
+        <div class="parallax-content">
+            <div class="container">
+
+                <div class="txt1">{% trans 'all tours for you'%}</div>
+                <div class="txt2">{% trans 'has been found'%} <strong>{{ tours.count }}</strong> {% trans 'tour(s)'%}</div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="breadcrumbs1_wrapper">
+        <div class="container">
+            <div class="breadcrumbs1"><a href={% url 'home' %}>{% trans 'Home'%}</a><span>/</span>{% trans 'list tours'%} {% if this_category %} <span>/</span><a href={% url 'category' pk=this_category.pk %}>{{ this_category.name }}</a>{% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div id="tours2">
+        <div class="container">
+            <div class="row">
+                {% include 'snippets/tour_sidebar.html' %}
+                <div class="col-sm-8 col-md-9">
+                    <div class="tours_content">
+                        {% for tour in page_obj  %}
+                            <div class="tour2 clearfix">
+                            {% if tour.image %}
+                                <figure><img src='{{ tour.image.url }}' alt="" class="img-responsive tour_image" style="width: 270px; height: 211px" ></figure>
+                            {% endif %}
+
+                            <div class="caption clearfix">
+                                <div class="left">
+                                    <div class="txt1">{{ tour.duration  }}
+                                        {% if tour.duration > 1 %}
+                                            {% trans 'days'%}
+                                        {% else %}
+                                            {% trans 'day' %}
+                                    {% endif %}</div>
+                                    <div class="txt2">{{ tour.name }}</div>
+                                    <div class="txt3">
+                                        <div class="stars">
+                                            {% if tour.rating == 1 %}
+                                                <img src="{% static 'images/star1.png' %}" alt="{{ tour.rating }} ">
+                                            {% endif %}
+                                            {% if tour.rating == 2 %}
+                                                <img src={% static 'images/star1.png' %} alt="{{ tour.rating }}">
+                                                <img src={% static 'images/star1.png' %} >
+                                            {% endif %}
+                                            {% if tour.rating == 3 %}
+                                                <img src={% static 'images/star1.png' %} alt="{{ tour.rating }}">
+                                                <img src={% static 'images/star1.png' %} >
+                                                <img src={% static 'images/star1.png' %} >
+                                            {% endif %}
+                                            {% if tour.rating == 4 %}
+                                                <img src={% static 'images/star1.png' %} alt="{{ tour.rating }}">
+                                                <img src={% static 'images/star1.png' %} >
+                                                <img src={% static 'images/star1.png' %} >
+                                                <img src={% static 'images/star1.png' %} >
+                                            {% endif %}
+                                            {% if tour.rating == 5 %}
+                                                <img src={% static 'images/star1.png' %} alt="{{ tour.rating }}">
+                                                <img src={% static 'images/star1.png' %} >
+                                                <img src={% static 'images/star1.png' %} >
+                                                <img src={% static 'images/star1.png' %} >
+                                                <img src={% static 'images/star1.png' %} >
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="txt4">
+                                        {{ tour.description|truncatewords:20 }}
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <div class="txt5">{% trans 'from'%}</div>
+                                    <div class="txt6">${{ tour.price }}</div>
+                                    <div class="txt7"><a href="{{ tour.get_absolute_url }}" class="btn-default btn3">{% trans 'view more'%}</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+
+
+
+
+                        <div class="pager_wrapper">
+                            <ul class="pager clearfix">
+                                {% if page_obj.has_previous %}
+                                    <li class="prev"><a href="?page={{ page_obj.previous_page_number }}">{% trans 'prev page'%}</a></li>
+                                {% endif %}
+
+                                {% if page_obj.number != 1 %}
+                                    <li class="li"><a href="?page=1">1</a></li>
+                                {% endif %}
+
+
+                                {% if page_obj.number|add:'-4' > 1 %}
+                                    <li class="dots"><a href="" class=" btn disabled">...</a></li>
+                                {% endif %}
+                                {% if page_obj.number|add:'-3' > 1 %}
+                                    <li class="li"><a href="?page={{ page_obj.number|add:'-3'}}">{{ page_obj.number|add:'-3' }}</a></li>
+                                {% endif %}
+                                {% if page_obj.number|add:'-2' > 1 %}
+                                    <li class="li"><a href="?page={{ page_obj.number|add:'-2'}}">{{ page_obj.number|add:'-2' }}</a></li>
+                                {% endif %}
+                                {% if page_obj.number|add:'-1' > 1 %}
+                                    <li class="li"><a href="?page={{ page_obj.number|add:'-1'}}">{{ page_obj.number|add:'-1' }}</a></li>
+                                {% endif %}
+
+                                <li class="active"><a href="?page={{ page_obj.number }}">{{ page_obj.number }}</a></li>
+
+                                {% if page_obj.number|add:'1' < page_obj.paginator.num_pages %}
+                                    <li class="li"><a href="?page={{ page_obj.number|add:'1'}}">{{ page_obj.number|add:'1' }}</a></li>
+                                {% endif %}
+                                {% if page_obj.number|add:'2' < page_obj.paginator.num_pages %}
+                                    <li class="li"><a href="?page={{ page_obj.number|add:'2'}}">{{ page_obj.number|add:'2' }}</a></li>
+                                {% endif %}
+                                {% if page_obj.number|add:'3' < page_obj.paginator.num_pages %}
+                                    <li class="li"><a href="?page={{ page_obj.number|add:'3' }}">{{ page_obj.number|add:'3' }}</a></li>
+                                {% endif %}
+                                {% if page_obj.number|add:'4' < page_obj.paginator.num_pages %}
+                                    <li class="dots"><a href="" class=" btn disabled">...</a></li>
+                                {% endif %}
+
+
+                                {% if page_obj.number != page_obj.paginator.num_pages %}
+                                    <li class="li"><a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a></li>
+                                {% endif %}
+
+
+                                {% if page_obj.has_next %}
+                                    <li class="next"><a href="?page={{ page_obj.next_page_number }}">{% trans 'next page'%}</a></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+{% block js %}
+    <script type="text/javascript" >
+        $( document ).ready(function() {
+    let first_image = $('.tour_image').first().attr('src');
+   let first_image_url  = "url('" + first_image + "')" ;
+   $('.bg2').css('background-image',first_image_url);
+});
+    </script>
+{% endblock %}
+

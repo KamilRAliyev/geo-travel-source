@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load static i18n %}
+{% block bodyclass %}
+class="multipage not-front page-tours"
+{% endblock %}
+
+{% block main %}
+<div id="parallax2" class="parallax">
+        <div class="bg2 parallax-bg"></div>
+        <div class="overlay"></div>
+        <div class="parallax-content">
+            <div class="container">
+
+                <div class="txt1">{% trans 'Rent a Car'%}</div>
+                <div class="txt2">{% trans 'has been found'%} <strong>{{ vehicles.count }}</strong> {% trans 'vehicle(s)'%}</div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="breadcrumbs1_wrapper">
+        <div class="container">
+            <div class="breadcrumbs1"><a href={% url 'home' %}>{% trans 'Home'%}</a><span>/</span>{% trans 'Rental Car List'%}
+            </div>
+        </div>
+    </div>
+
+    <div id="tours2">
+        <div class="container">
+            <div class="row">
+                {% include 'snippets/car_rental_list_sidebar.html' %}
+                <div class="col-sm-8 col-md-9">
+                    <div class="tours_content">
+                        {% for vehicle in page_obj  %}
+                            <div class="tour2 clearfix">
+                            <figure><img src="{{ vehicle.image.url }}" alt="" class="img-responsive" style="width: 270px; height: 211px"></figure>
+                            <div class="caption clearfix">
+                                <div class="left">
+                                    <div class="txt1">{% trans 'Category:'%} {{ vehicle.category.name }}</div>
+                                    <div class="txt2">{{ vehicle.name }}, {{ vehicle.year }} {% trans 'model'%}</div>
+                                    <div class="txt4">
+                                        <p>{% trans 'Passenger capacity:'%} {{ vehicle.passenger }} {% trans 'passengers.'%}</p>
+                                        <p>{% trans 'Engine:'%} {{ vehicle.engine }} .  {{ vehicle.transmission|title }} {% trans 'transmission'%}</p>
+                                        <p>{% trans 'Body Style:'%} {{ vehicle.body_style }}</p>
+
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <div class="txt5">{% trans 'from'%}</div>
+                                    <div class="txt6">${{ vehicle.price }}</div>
+                                    <div class="txt7"><a class="btn-default btn3" href={{ vehicle.get_absolute_url }} >{% trans 'view more'%}</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+
+
+
+
+                        <div class="pager_wrapper">
+                            <ul class="pager clearfix">
+                                {% if page_obj.has_previous %}
+                                    <li class="prev"><a href="?page={{ page_obj.previous_page_number }}">{% trans 'prev page'%}</a></li>
+                                {% endif %}
+
+                                {% if page_obj.number != 1 %}
+                                    <li class="li"><a href="?page=1">1</a></li>
+                                {% endif %}
+
+
+                                {% if page_obj.number|add:'-4' > 1 %}
+                                    <li class="dots"><a href="" class=" btn disabled">...</a></li>
+                                {% endif %}
+                                {% if page_obj.number|add:'-3' > 1 %}
+                                    <li class="li"><a href="?page={{ page_obj.number|add:'-3'}}">{{ page_obj.number|add:'-3' }}</a></li>
+                                {% endif %}
+                                {% if page_obj.number|add:'-2' > 1 %}
+                                    <li class="li"><a href="?page={{ page_obj.number|add:'-2'}}">{{ page_obj.number|add:'-2' }}</a></li>
+                                {% endif %}
+                                {% if page_obj.number|add:'-1' > 1 %}
+                                    <li class="li"><a href="?page={{ page_obj.number|add:'-1'}}">{{ page_obj.number|add:'-1' }}</a></li>
+                                {% endif %}
+
+                                <li class="active"><a href="?page={{ page_obj.number }}">{{ page_obj.number }}</a></li>
+
+                                {% if page_obj.number|add:'1' < page_obj.paginator.num_pages %}
+                                    <li class="li"><a href="?page={{ page_obj.number|add:'1'}}">{{ page_obj.number|add:'1' }}</a></li>
+                                {% endif %}
+                                {% if page_obj.number|add:'2' < page_obj.paginator.num_pages %}
+                                    <li class="li"><a href="?page={{ page_obj.number|add:'2'}}">{{ page_obj.number|add:'2' }}</a></li>
+                                {% endif %}
+                                {% if page_obj.number|add:'3' < page_obj.paginator.num_pages %}
+                                    <li class="li"><a href="?page={{ page_obj.number|add:'3' }}">{{ page_obj.number|add:'3' }}</a></li>
+                                {% endif %}
+                                {% if page_obj.number|add:'4' < page_obj.paginator.num_pages %}
+                                    <li class="dots"><a href="" class=" btn disabled">...</a></li>
+                                {% endif %}
+
+
+                                {% if page_obj.number != page_obj.paginator.num_pages %}
+                                    <li class="li"><a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a></li>
+                                {% endif %}
+
+
+                                {% if page_obj.has_next %}
+                                    <li class="next"><a href="?page={{ page_obj.next_page_number }}">{% trans 'next page'%}</a></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript" >
+        $( document ).ready(function() {
+           $('.bg2').css('background-image',"url('/static/images/buses.jpg')");
+});
+    </script>
+{% endblock %}

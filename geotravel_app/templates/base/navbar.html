@@ -1,0 +1,156 @@
+{% load static %}
+{% load static i18n %}
+{% url 'home' as home %}
+{% url 'tours' as tours %}
+{% url 'e_visa' as visa %}
+{% url 'who-we-are' as whoweare %}
+{% url 'where-you-can-meet-us' as whereyoucanmeetus %}
+{% url 'our-mission' as ourmission %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% get_language_info_list for LANGUAGES as languages %}
+
+<div id="top1">
+    <div class="top2_wrapper" id="top2">
+        <div class="container">
+
+            <div class="top2 clearfix">
+
+                <header>
+                    <div class="logo_wrapper margtop">
+                        <a href="/" class="logo scroll-to">
+                            <img src="{% static "images/navlogo.png" %}" alt="GeoTravel logo" style="height: 69px;" class="img-responsive">
+                        </a>
+                    </div>
+                </header>
+
+                <div class="navbar navbar_ navbar-default">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target=".navbar-collapse">
+                        <span class="sr-only">{% trans 'Toggle navigation'%}</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="navbar-collapse navbar-collapse_ collapse">
+                        <ul class="nav navbar-nav sf-menu clearfix">
+                            <li class="{% if request.path == home %}
+                                active
+                            {% endif %}"><a href={% url 'home' %}>{% trans 'Home'%}</a></li>
+
+                            <li class="sub-menu sub-menu-1 {% if request.path == visa %}
+                                active
+                            {% endif %}"><a href={%  url 'e_visa' %}>{% trans 'E-visa'%}</a>
+                            </li>
+
+                            <li class="sub-menu sub-menu-1 {% if request.path == tours %}
+                                active
+                            {% endif %}"><a>{% trans 'Tours'%}<em
+                                    class="fa fa-angle-down"></em></a>
+                                <ul>
+                                    {% for cat in category %}
+                                    <li class="sub-menu sub-menu-2"><a href={% url 'category' pk=cat.pk %}>•&nbsp;&nbsp;&nbsp;{{ cat.name }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                            <li class="sub-menu sub-menu-1">
+                                <a href="{% url 'guide_list' %}">{% trans 'Guide Services'%}</a>
+                            </li>
+                            <li class="sub-menu sub-menu-1"><a>{% trans 'Transport services'%}<em
+                                    class="fa fa-angle-down"></em></a>
+                                <ul>
+                                    <li class="sub-menu sub-menu-2"><a href={% url 'transfer' %}>•&nbsp;&nbsp;&nbsp;{% trans 'Transfers'%}</a></li>
+                                    {% if transfer_static_pages %}
+                                        {% for foo in transfer_static_pages %}
+                                            {% if foo.slug %}
+                                                {% if LANGUAGE_CODE == 'en' %}
+                                                    <li class="sub-menu sub-menu-2"><a href='/transport/{{ foo.slug }}'>•&nbsp;&nbsp;&nbsp;{{ foo.name }}</a></li>
+                                                {% else %}
+                                                    <li class="sub-menu sub-menu-2"><a href='/{{LANGUAGE_CODE}}/transport/{{ foo.slug }}'>•&nbsp;&nbsp;&nbsp;{{ foo.name }}</a></li>
+                                                {% endif %}
+                                            {% endif %}
+                                        {% endfor %}
+
+                                    {% endif %}
+                                    <li class="sub-menu sub-menu-2"><a href={% url 'car-rental-list' %}>•&nbsp;&nbsp;&nbsp;{% trans 'Car rental'%}</a></li>
+                                </ul>
+                            </li>
+                            <li class="sub-menu sub-menu-1">
+                                <a href="http://85.132.13.182/b2b">{% trans 'B2B'%}</a>
+                            </li>
+                            <li class="sub-menu sub-menu-1 {% if request.path == ourmission %}
+                                active
+                            {% endif %}{% if request.path == whoweare %}
+                                active
+                            {% endif %}{% if request.path == whereyoucanmeetus %}
+                                active
+                            {% endif %}"><a>{% trans 'About Us'%}<em
+                                class="fa fa-angle-down"></em></a>
+                            <ul>
+                                <li class="sub-menu sub-menu-2"><a href={% url 'who-we-are' %}>•&nbsp;&nbsp;&nbsp;{% trans 'Who we are?'%}</a></li>
+                                <li class="sub-menu sub-menu-2"><a href={% url 'where-you-can-meet-us' %}>•&nbsp;&nbsp;&nbsp;{% trans 'Where you can meet us?'%}</a></li>
+                                <li class="sub-menu sub-menu-2"><a href={% url 'our-mission' %}>•&nbsp;&nbsp;&nbsp;{% trans 'Our mission'%}</a></li>
+                                <li class="sub-menu sub-menu-2"><a href={% url 'sahman' %}>•&nbsp;&nbsp;&nbsp;{% trans 'SAHMAN'%}</a></li>
+                            </ul>
+                        </li>
+{##}
+{#                                  {% get_current_language as LANGUAGE_CODE %}#}
+{#                            <form class="navbar-form navbar-left my-2 my-md-0" action="{% url 'set_language' %}" method="post">{% csrf_token %}#}
+{##}
+{#                                <input name="next" type="hidden" value="{{ redirect_to }}" />#}
+{##}
+{#                                  {% get_available_languages as LANGUAGES %}#}
+{#                                  {% get_language_info_list for LANGUAGES as languages %}#}
+{#                                  {% for language in languages %}#}
+{##}
+{#                                       <a style="text-decoration: none"><button type="submit" name="language" style="display: block;  border: none; background: none; padding: 0.5em; " value="{{ language.code }}">#}
+{#                                           <img height="13" width="19" src="/static/images/flags/{{ language.code }}.png" alt="{{ language.code }}">#}
+{#                                      </button></a>#}
+{##}
+{#                                  {% endfor %}#}
+{##}
+{#                            </form>#}
+
+                            <li class="sub-menu sub-menu-1">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="https:{% get_static_prefix %}images/flags/{{LANGUAGE_CODE}}.png">&nbsp;<em
+                                class="fa fa-angle-down"></em></a>
+                              <ul>
+                                {% get_current_language as LANGUAGE_CODE %}
+                                {% get_available_languages as LANGUAGES %}
+                                {% get_language_info_list for LANGUAGES as languages %}
+                                {% for language in languages %}
+                                    <li class="sub-menu sub-menu-2">
+                                        <a
+                                           href="
+                                           {% if LANGUAGE_CODE != 'en' %}
+                                                {% if language.code == "en" %}
+                                                    {{ request.get_full_path|slice:'3:' }}
+                                                {% else %}
+                                                    /{{ language.code }}{{ request.get_full_path|slice:'3:' }}
+                                                {% endif %}
+                                           {% else %}
+                                                {% if language.code == "en" %}
+                                                    {{ request.get_full_path }}
+                                                {% else %}
+                                                    /{{ language.code }}{{ request.get_full_path }}
+                                                {% endif %}
+                                           {% endif %}
+                                            "
+                                           class="{% if language.code == LANGUAGE_CODE %}selected{% endif %}"
+                                           lang="{{ language.code }}">
+                                            <img alt="Change Language to {{ language.name_local }}" src="https:{% get_static_prefix %}images/flags/{{language.code}}.png"> {{ language.name_local }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>

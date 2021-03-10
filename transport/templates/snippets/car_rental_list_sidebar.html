@@ -1,0 +1,125 @@
+{% load static %}
+{% load static i18n %}
+
+<div class="col-sm-4 col-md-3">
+                    <div class="tours_sidebar">
+
+                        <div class="title3">{% trans 'Search:'%}</div>
+
+                        <form id="ajax-contact-form2" class="form-horizontal" method="post">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="label" for="category">{% trans 'Vehicle category:'%}</label>
+                                                <select  class="form-control" name="category" id="category">
+                                                    <option selected value="">{% trans 'Any'%}</option>
+                                                    <option value="Business">{% trans 'Business'%}</option>
+                                                    <option value="Offroader">{% trans 'Offroader'%}</option>
+                                                    <option value="Minivan">{% trans 'Minivan'%}</option>
+                                                    <option value="Pick-Up">{% trans 'Pick-Up'%}</option>
+                                                    <option value="Standard">{% trans 'Standard'%}</option>
+                                                    <option value="Econom">{% trans 'Econom'%}</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="label" for="passcap">{% trans 'Passenger capacity:'%}</label>
+                                                <select  class="form-control" name="passcap" id="passcap">
+                                                    <option selected value="">{% trans 'Any'%}</option>
+                                                    <option value="2">{% trans '2 pas.'%}</option>
+                                                    <option value="4">{% trans '4 pas.'%}</option>
+                                                    <option value="6">{% trans '6 pas.'%}</option>
+                                                    <option value="8">{% trans '8 pas.'%}</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="label" for="tr">{% trans 'Transmission:'%}</label>
+                                                <select  class="form-control" name="tr" id="tr">
+                                                    <option selected value="">{% trans 'Any'%}</option>
+                                                    <option value="automatical">{% trans 'Automatical'%}</option>
+                                                    <option value="manual">{% trans 'Manual'%}</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-default btn-cf-submit2" style="text-align:center;">{% trans 'get Vehicles'%}</button>
+                        </form>
+
+                        <div class="divider2"></div>
+
+                        <form method="post">
+                            {% csrf_token %}
+                        <div class="title3">{% trans 'price range'%}</div>
+
+                        <div id="slider-range-wrapper">
+                                <div id="slider-range"></div>
+
+                                <div class="clearfix">
+                                    <input type="text" name="amount" id="amount" readonly>
+                                    <input type="text" name="amount2" id="amount2" readonly>
+                                </div>
+
+                            </div>
+
+                            <button type="submit" class="btn-default btn3">{% trans 'filter'%}</button>
+                        </form>
+
+
+{#                        <div class="divider2"></div>#}
+{##}
+{#                        <div class="title3">star rating</div>#}
+{##}
+{#                        <div class="rating1">#}
+{#                            <form>#}
+{#                                <div><a href="#">#}
+{#                                    <input id="radio-1" class="radio-custom1" name="radio-group" type="radio" checked>#}
+{#                                    <label for="radio-1" class="radio-custom1-label"><img src={% static "images/star1.png" %} alt=""><img#}
+{#                                            src={% static "images/star1.png" %} alt=""><img src={% static "images/star1.png" %} alt=""><img#}
+{#                                            src={% static "images/star1.png" %} alt=""><img src={% static "images/star1.png" %} alt=""></label>#}
+{#                                </a></div>#}
+{#                                <div>#}
+{#                                    <input id="radio-2" class="radio-custom1" name="radio-group" type="radio">#}
+{#                                    <label for="radio-2" class="radio-custom1-label"><img src={% static "images/star1.png" %} alt=""><img#}
+{#                                            src={% static "images/star1.png" %} alt=""><img src={% static "images/star1.png" %} alt=""><img#}
+{#                                            src={% static "images/star1.png" %} alt=""></label>#}
+{#                                </div>#}
+{#                                <div>#}
+{#                                    <input id="radio-3" class="radio-custom1" name="radio-group" type="radio">#}
+{#                                    <label for="radio-3" class="radio-custom1-label"><img src={% static "images/star1.png" %} alt=""><img#}
+{#                                            src={% static "images/star1.png" %} alt=""><img src={% static "images/star1.png" %} alt=""></label>#}
+{#                                </div>#}
+{#                                <div>#}
+{#                                    <input id="radio-4" class="radio-custom1" name="radio-group" type="radio">#}
+{#                                    <label for="radio-4" class="radio-custom1-label"><img src={% static "images/star1.png" %} alt=""><img#}
+{#                                            src={% static "images/star1.png" %} alt=""></label>#}
+{#                                </div>#}
+{#                                <div>#}
+{#                                    <input id="radio-5" class="radio-custom1" name="radio-group" type="radio">#}
+{#                                    <label for="radio-5" class="radio-custom1-label"><img src={% static "images/star1.png" %} alt=""></label>#}
+{#                                </div>#}
+{#                            </form>#}
+{#                        </div>#}
+
+{#                        <div class="divider2"></div>#}
+{##}
+{#                        <div class="title3">Facility</div>#}
+{##}
+{#                        <div class="facility1">#}
+{#                            <form>#}
+{#                                <div>#}
+{#                                    <input id="checkbox-2" class="checkbox1-custom" name="checkbox-2" type="checkbox">#}
+{#                                    <label for="checkbox-2" class="checkbox1-custom-label">Groups allowed</label>#}
+{#                                </div>#}
+{#                                <div>#}
+{#                                    <input id="checkbox-3" class="checkbox1-custom" name="checkbox-3" type="checkbox">#}
+{#                                    <label for="checkbox-3" class="checkbox1-custom-label">Tour guides</label>#}
+{#                                </div>#}
+{##}
+{#                            </form>#}
+{#                        </div>#}
+                    </div>
+                </div>

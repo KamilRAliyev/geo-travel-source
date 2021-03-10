@@ -1,0 +1,81 @@
+{% extends 'geo/static_page.html' %}
+{% load static i18n %}
+
+{% block form %}
+
+
+                        {% if message %}
+                            <div class="alert alert-success" style="margin: 1rem ;" onclick="$('.alert').alert('close')" role="alert">
+                                {{ message }}
+                            </div>
+                        {% endif %}
+                    <div class="tours_sidebar">
+
+                        <div class="title3">{{ tour.name }}</div>
+
+                        <form id="ajax-contact-form2" class="form-horizontal" method="post" action="order/" enctype="multipart/form-data">{% csrf_token %}
+                            <div class="row">
+                                {{ form.non_field_errors }}
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                {{ form.fullname.errors }}
+                                                <label class="label" for="{{ form.fullname.id_for_label }}" >{% trans 'Full Name:'%}</label>
+                                                {{ form.fullname }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                {{ form.email.errors }}
+                                                <label class="label" for="{{ form.email.id_for_label }}" >{% trans 'Email:'%}</label>
+                                                {{ form.email}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                {{ form.number.errors }}
+                                                <label class="label" for="{{ form.number.id_for_label }}" >{% trans 'Phone Number:'%}</label>
+                                                {{ form.number}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                {{ form.passport.errors }}
+                                                <label class="label file-i" for="{{ form.passport.id_for_label }}" >{% trans 'Passport Scan:'%}</label>
+                                                {{ form.passport}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                {{ form.passport.errors }}
+                                                <label class="label file-i" for="{{ form.document.id_for_label }}" >{% trans 'Document Scan:'%}</label>
+                                                {{ form.document}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <button type="submit" class="btn-default btn-cf-reserve">{% trans 'Need a help!'%}</button>
+                        </form>
+                    </div>
+
+{% endblock %}

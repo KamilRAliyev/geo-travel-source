@@ -1,0 +1,117 @@
+{% load static %}
+{% load static i18n %}
+
+<div class="col-sm-4 col-md-3">
+                    <div class="tours_sidebar">
+
+                        <div class="title3">{% trans 'Filter'%} {% if this_category %}{{ this_category.name }}{% endif %}</div>
+
+                        <form id="ajax-contact-form2" class="form-horizontal" method="post">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label class="label" for="where">{% trans 'city:'%}</label>
+                                                <input type="text" class="form-control" id="where" name="city"
+                                                       placeholder="{% trans 'Your City'%}"
+                                                       onBlur="if(this.value=='') this.value='Where do you want to go?'"
+                                                       onFocus="if(this.value =='Where do you want to go?' ) this.value=''">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-default btn-cf-submit2" style="text-align:center;">{% trans 'get tours'%}</button>
+                        </form>
+
+                        <div class="divider2"></div>
+
+                        <div class="title3">{% trans 'categories'%}</div>
+
+                        <div class="accordion accordion1">
+                            <h3>{% trans 'tours'%}</h3>
+                            <div>
+                                <ul class="ul2">
+                                    {% for category in category %}
+                                        <li><a href={{ category.get_absolute_url }}>{{ category }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="divider2"></div>
+
+                        <form method="post">
+                            {% csrf_token %}
+                        <div class="title3">{% trans 'price range'%}</div>
+
+                        <div id="slider-range-wrapper">
+                                <div id="slider-range"></div>
+
+                                <div class="clearfix">
+                                    <input type="text" name="amount" id="amount" readonly>
+                                    <input type="text" name="amount2" id="amount2" readonly>
+                                </div>
+
+                            </div>
+
+                            <button type="submit" class="btn-default btn3">{% trans 'filter'%}</button>
+                        </form>
+
+
+{#                        <div class="divider2"></div>#}
+{##}
+{#                        <div class="title3">star rating</div>#}
+{##}
+{#                        <div class="rating1">#}
+{#                            <form>#}
+{#                                <div><a href="#">#}
+{#                                    <input id="radio-1" class="radio-custom1" name="radio-group" type="radio" checked>#}
+{#                                    <label for="radio-1" class="radio-custom1-label"><img src={% static "images/star1.png" %} alt=""><img#}
+{#                                            src={% static "images/star1.png" %} alt=""><img src={% static "images/star1.png" %} alt=""><img#}
+{#                                            src={% static "images/star1.png" %} alt=""><img src={% static "images/star1.png" %} alt=""></label>#}
+{#                                </a></div>#}
+{#                                <div>#}
+{#                                    <input id="radio-2" class="radio-custom1" name="radio-group" type="radio">#}
+{#                                    <label for="radio-2" class="radio-custom1-label"><img src={% static "images/star1.png" %} alt=""><img#}
+{#                                            src={% static "images/star1.png" %} alt=""><img src={% static "images/star1.png" %} alt=""><img#}
+{#                                            src={% static "images/star1.png" %} alt=""></label>#}
+{#                                </div>#}
+{#                                <div>#}
+{#                                    <input id="radio-3" class="radio-custom1" name="radio-group" type="radio">#}
+{#                                    <label for="radio-3" class="radio-custom1-label"><img src={% static "images/star1.png" %} alt=""><img#}
+{#                                            src={% static "images/star1.png" %} alt=""><img src={% static "images/star1.png" %} alt=""></label>#}
+{#                                </div>#}
+{#                                <div>#}
+{#                                    <input id="radio-4" class="radio-custom1" name="radio-group" type="radio">#}
+{#                                    <label for="radio-4" class="radio-custom1-label"><img src={% static "images/star1.png" %} alt=""><img#}
+{#                                            src={% static "images/star1.png" %} alt=""></label>#}
+{#                                </div>#}
+{#                                <div>#}
+{#                                    <input id="radio-5" class="radio-custom1" name="radio-group" type="radio">#}
+{#                                    <label for="radio-5" class="radio-custom1-label"><img src={% static "images/star1.png" %} alt=""></label>#}
+{#                                </div>#}
+{#                            </form>#}
+{#                        </div>#}
+
+{#                        <div class="divider2"></div>#}
+{##}
+{#                        <div class="title3">Facility</div>#}
+{##}
+{#                        <div class="facility1">#}
+{#                            <form>#}
+{#                                <div>#}
+{#                                    <input id="checkbox-2" class="checkbox1-custom" name="checkbox-2" type="checkbox">#}
+{#                                    <label for="checkbox-2" class="checkbox1-custom-label">Groups allowed</label>#}
+{#                                </div>#}
+{#                                <div>#}
+{#                                    <input id="checkbox-3" class="checkbox1-custom" name="checkbox-3" type="checkbox">#}
+{#                                    <label for="checkbox-3" class="checkbox1-custom-label">Tour guides</label>#}
+{#                                </div>#}
+{##}
+{#                            </form>#}
+{#                        </div>#}
+                    </div>
+                </div>

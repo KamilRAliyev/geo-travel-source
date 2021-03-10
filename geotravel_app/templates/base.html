@@ -1,0 +1,113 @@
+{% load static %}
+{% load static i18n %}
+
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% get_language_info_list for LANGUAGES as languages %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>{% trans "Geo Travel Azerbaijan" %}</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your description">
+    <meta name="keywords" content="Azerbaijan Travel Baku Tours Rent a car in Baku">
+    <meta name="author" content="Kamil Aliyev">
+    <link rel="shortcut icon" type="image/png" href={% static 'images/favicon.ico' %} >
+    {% include 'base/css.html' %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-169899469-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-169899469-1');
+    </script>
+</head>
+<body {% block bodyclass %} {% endblock bodyclass %}>
+    <!-- Load Facebook SDK for JavaScript -->
+      <div id="fb-root"></div>
+      <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            xfbml            : true,
+            version          : 'v7.0'
+          });
+        };
+
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+      <!-- Your Chat Plugin code -->
+      <div class="fb-customerchat"
+        attribution=setup_tool
+        page_id="130398070802682">
+      </div>
+
+    {% block load %}{% endblock load %}
+
+    <div id="main">
+        {% include 'base/navbar.html' %}
+
+        {% block main %}
+        {% endblock main %}
+    </div>
+    <div class="alert alert-dismissible text-center cookiealert" role="alert">
+        <div class="cookiealert-container">
+            <b>{% trans 'Do you like cookies?' %}</b> {% trans "We use cookies to ensure you get the best experience on our website." %} &#x1F36A; <a href="{% url 'cookie-policy' %}" target="_blank">{% trans "Learn more"%}</a>
+
+              <button type="button" class="btn btn-primary btn-sm acceptcookies" aria-label="Close">
+                I agree
+              </button>
+        </div>
+    </div>
+    {% include 'base/js.html' %}
+    {% include 'base/footer.html' %}
+
+
+
+    {% block js %}
+    {% endblock js %}
+
+
+
+    <script type="text/javascript" >
+        function getCookie(name) {
+            var value = '; ' + document.cookie,
+                parts = value.split('; ' + name + '=');
+            if (parts.length == 2) return parts.pop().split(';').shift();
+        }
+
+        function reload_page() {
+            window.location.reload(true);
+        }
+        $(document).ready(function() {
+            $("[data-f-id=pbf]").css('display', 'none');
+            $('#language-list a').on('click', function(event) {
+                event.preventDefault();
+                var target = $(event.target);
+                var url = target.attr('href');
+                var language_code = target.data('language-code');
+                $.ajax({
+                    type: 'POST',
+                    url: url,
+                    data: {language: language_code},
+                    headers: {"X-CSRFToken": getCookie('csrftoken')}
+                }).done(function(data, textStatus, jqXHR) {
+                    reload_page();
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>
