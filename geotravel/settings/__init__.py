@@ -1,7 +1,7 @@
 from .base import *
-from .production import *
+import socket
 
-# try:
-#     from .local import *
-# except:
-#     pass
+# from .production import *
+
+if socket.gethostname() ==  'kamil-KLV-WX9':
+    from .base import *
