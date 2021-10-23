@@ -7,7 +7,7 @@ from froala_editor.fields import FroalaField
 
 
 def get_filename_ext(filepath):
-    base_name = os.path.basename(filepath)
+    base_name = filepath
     name, ext = os.path.split(base_name)
     return name, ext
 
