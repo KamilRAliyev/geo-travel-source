@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=emulateIE7" />
-    <title>Coverage for tours/models.py: 85%</title>
+    <title>Coverage for tours/models.py: 90%</title>
     <link rel="icon" sizes="32x32" href="favicon_32.png">
     <link rel="stylesheet" href="style.css" type="text/css">
     <script type="text/javascript" src="jquery.min.js"></script>
@@ -18,13 +18,13 @@
 <div id="header">
     <div class="content">
         <h1>Coverage for <b>tours/models.py</b> :
-            <span class="pc_cov">85%</span>
+            <span class="pc_cov">90%</span>
         </h1>
         <img id="keyboard_icon" src="keybd_closed.png" alt="Show keyboard shortcuts" />
         <h2 class="stats">
             88 statements &nbsp;
-            <button type="button" class="run shortkey_r button_toggle_run" title="Toggle lines run">75 run</button>
-            <button type="button" class="mis show_mis shortkey_m button_toggle_mis" title="Toggle lines missing">13 missing</button>
+            <button type="button" class="run shortkey_r button_toggle_run" title="Toggle lines run">79 run</button>
+            <button type="button" class="mis show_mis shortkey_m button_toggle_mis" title="Toggle lines missing">9 missing</button>
             <button type="button" class="exc show_exc shortkey_x button_toggle_exc" title="Toggle lines excluded">0 excluded</button>
         </h2>
     </div>
@@ -104,10 +104,10 @@
     <p id="t50" class="run"><span class="n"><a href="#t50">50</a></span><span class="t">    <span class="nam">content_bg</span> <span class="op">=</span> <span class="nam">FroalaField</span><span class="op">(</span><span class="nam">theme</span><span class="op">=</span><span class="str">'dark'</span><span class="op">,</span> <span class="nam">null</span><span class="op">=</span><span class="key">True</span><span class="op">,</span> <span class="nam">blank</span><span class="op">=</span><span class="key">True</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p id="t51" class="pln"><span class="n"><a href="#t51">51</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p id="t52" class="run"><span class="n"><a href="#t52">52</a></span><span class="t">    <span class="key">def</span> <span class="nam">__str__</span><span class="op">(</span><span class="nam">self</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t53" class="mis show_mis"><span class="n"><a href="#t53">53</a></span><span class="t">        <span class="key">return</span> <span class="str">f"{self.name} | {self.description}"</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t53" class="run"><span class="n"><a href="#t53">53</a></span><span class="t">        <span class="key">return</span> <span class="str">f"{self.name} | {self.description}"</span>&nbsp;</span><span class="r"></span></p>
     <p id="t54" class="pln"><span class="n"><a href="#t54">54</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p id="t55" class="run"><span class="n"><a href="#t55">55</a></span><span class="t">    <span class="key">def</span> <span class="nam">get_absolute_url</span><span class="op">(</span><span class="nam">self</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t56" class="mis show_mis"><span class="n"><a href="#t56">56</a></span><span class="t">        <span class="key">return</span> <span class="nam">reverse</span><span class="op">(</span><span class="str">"tour_details"</span><span class="op">,</span> <span class="nam">kwargs</span><span class="op">=</span><span class="op">{</span><span class="str">'slug'</span><span class="op">:</span> <span class="nam">self</span><span class="op">.</span><span class="nam">slug</span><span class="op">}</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t56" class="run"><span class="n"><a href="#t56">56</a></span><span class="t">        <span class="key">return</span> <span class="nam">reverse</span><span class="op">(</span><span class="str">"tour_details"</span><span class="op">,</span> <span class="nam">kwargs</span><span class="op">=</span><span class="op">{</span><span class="str">'slug'</span><span class="op">:</span> <span class="nam">self</span><span class="op">.</span><span class="nam">slug</span><span class="op">}</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p id="t57" class="pln"><span class="n"><a href="#t57">57</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p id="t58" class="run"><span class="n"><a href="#t58">58</a></span><span class="t">    <span class="key">class</span> <span class="nam">Meta</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p id="t59" class="run"><span class="n"><a href="#t59">59</a></span><span class="t">        <span class="nam">verbose_name</span> <span class="op">=</span> <span class="str">'Tour'</span>&nbsp;</span><span class="r"></span></p>
@@ -115,8 +115,8 @@
     <p id="t61" class="pln"><span class="n"><a href="#t61">61</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p id="t62" class="pln"><span class="n"><a href="#t62">62</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p id="t63" class="run"><span class="n"><a href="#t63">63</a></span><span class="t"><span class="key">def</span> <span class="nam">product_pre_save_receiver</span><span class="op">(</span><span class="nam">sender</span><span class="op">,</span> <span class="nam">instance</span><span class="op">,</span> <span class="op">*</span><span class="nam">args</span><span class="op">,</span> <span class="op">**</span><span class="nam">kwargs</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t64" class="mis show_mis"><span class="n"><a href="#t64">64</a></span><span class="t">    <span class="key">if</span> <span class="key">not</span> <span class="nam">instance</span><span class="op">.</span><span class="nam">slug</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t65" class="mis show_mis"><span class="n"><a href="#t65">65</a></span><span class="t">        <span class="nam">instance</span><span class="op">.</span><span class="nam">slug</span> <span class="op">=</span> <span class="nam">unique_slug_generator</span><span class="op">(</span><span class="nam">instance</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t64" class="run"><span class="n"><a href="#t64">64</a></span><span class="t">    <span class="key">if</span> <span class="key">not</span> <span class="nam">instance</span><span class="op">.</span><span class="nam">slug</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t65" class="run"><span class="n"><a href="#t65">65</a></span><span class="t">        <span class="nam">instance</span><span class="op">.</span><span class="nam">slug</span> <span class="op">=</span> <span class="nam">unique_slug_generator</span><span class="op">(</span><span class="nam">instance</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p id="t66" class="pln"><span class="n"><a href="#t66">66</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p id="t67" class="pln"><span class="n"><a href="#t67">67</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p id="t68" class="run"><span class="n"><a href="#t68">68</a></span><span class="t"><span class="nam">pre_save</span><span class="op">.</span><span class="nam">connect</span><span class="op">(</span><span class="nam">product_pre_save_receiver</span><span class="op">,</span> <span class="nam">sender</span><span class="op">=</span><span class="nam">Tour</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
@@ -180,7 +180,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v6.0.2</a>,
-            created at 2021-10-23 11:30 +0300
+            created at 2021-10-23 11:42 +0300
         </p>
     </div>
 </div>
