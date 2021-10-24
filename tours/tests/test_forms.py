@@ -29,15 +29,15 @@ class TestTourCommentForm(TestCase):
         self.assertTrue(form1.has_error('email'), "Form has false errors with email field")
 
     def test_clean_name(self):
-        form = TourCommentForm(data={
+        formm = TourCommentForm(data={
             'full_name': 'Kamil@Aliyev',
             'email': 'kamil@gmail.com',
             'comment': 'test'
         })
-        form1 = TourCommentForm(data={
+        formm1 = TourCommentForm(data={
             'full_name': 'Kamil Aliyev',
             'email': 'kamil@gmail.com',
             'comment': 'test'
         })
-        self.assertFalse(form.has_error('full_name'), "Name lets @ symbol to be in name")
-        self.assertFalse(form1.has_error('full_name'), "Form has false errors with name field")
+        self.assertFalse(formm.has_error('full_name'), "Name lets @ symbol to be in name")
+        self.assertFalse(formm1.has_error('full_name'), "Form has false errors with name field")
