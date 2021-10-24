@@ -23,7 +23,7 @@ class TestUtils(TestCase):
         unslgen = utils.unique_slug_generator
         lst = []
         lst_unique = []
-        for i in range(1000):
+        for i in range(100):
             value = unslgen(instance=self.tour)
             lst.append(value)
             if value not in lst_unique:

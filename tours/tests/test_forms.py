@@ -1,25 +1,25 @@
 from django import setup
+from django.core.exceptions import ValidationError
 from django.test import TestCase
 from tours.forms import TourCommentForm
+from django import forms
 
 
 
 class TestTourCommentForm(TestCase):
-    def setUp(self) -> None:
-        self.form = TourCommentForm
-    
+   
     def test_clean_email(self):
-        form = self.form(data={
+        form = TourCommentForm(data={
             'full_name': 'Kamil Aliyev',
             'email': 'kamil.as',
             'comment': 'test'
         })
-        form1 = self.form(data={
+        form1 = TourCommentForm(data={
             'full_name': 'Kamil Aliyev',
             'email': 'kamil@as',
             'comment': 'test'
         })
-        form2 = self.form(data={
+        form2 = TourCommentForm(data={
             'full_name': 'Kamil Aliyev',
             'email': 'kamil@gmail.com',
             'comment': 'test'
@@ -29,12 +29,12 @@ class TestTourCommentForm(TestCase):
         self.assertTrue(form1.has_error('email'), "Form has false errors with email field")
 
     def test_clean_name(self):
-        form = self.form(data={
+        form = TourCommentForm(data={
             'full_name': 'Kamil@Aliyev',
             'email': 'kamil@gmail.com',
             'comment': 'test'
         })
-        form1 = self.form(data={
+        form1 = TourCommentForm(data={
             'full_name': 'Kamil Aliyev',
             'email': 'kamil@gmail.com',
             'comment': 'test'
