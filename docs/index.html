@@ -18,7 +18,7 @@
 <div id="header">
     <div class="content">
         <h1>Coverage report:
-            <span class="pc_cov">80%</span>
+            <span class="pc_cov">72%</span>
         </h1>
         <img id="keyboard_icon" src="keybd_closed.png" alt="Show keyboard shortcuts" />
         <form id="filter_container">
@@ -35,6 +35,8 @@
         <span class="key">s</span>
         <span class="key">m</span>
         <span class="key">x</span>
+        <span class="key">b</span>
+        <span class="key">p</span>
         <span class="key">c</span> &nbsp; change column sorting
     </p>
     </div>
@@ -47,21 +49,27 @@
                 <th class="shortkey_s">statements</th>
                 <th class="shortkey_m">missing</th>
                 <th class="shortkey_x">excluded</th>
+                <th class="shortkey_b">branches</th>
+                <th class="shortkey_p">partial</th>
                 <th class="right shortkey_c">coverage</th>
             </tr>
         </thead>
         <tfoot>
             <tr class="total">
                 <td class="name left">Total</td>
-                <td>1399</td>
+                <td>1203</td>
                 <td>283</td>
                 <td>0</td>
-                <td class="right" data-ratio="1116 1399">80%</td>
+                <td>158</td>
+                <td>6</td>
+                <td class="right" data-ratio="978 1361">72%</td>
             </tr>
         </tfoot>
         <tbody>
             <tr class="file">
                 <td class="name left"><a href="d_0722ab8617a10db1___init___py.html">geotravel/__init__.py</a></td>
+                <td>0</td>
+                <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td>0</td>
@@ -72,6 +80,8 @@
                 <td>0</td>
                 <td>0</td>
                 <td>0</td>
+                <td>0</td>
+                <td>0</td>
                 <td class="right" data-ratio="0 0">100%</td>
             </tr>
             <tr class="file">
@@ -79,24 +89,32 @@
                 <td>4</td>
                 <td>0</td>
                 <td>0</td>
-                <td class="right" data-ratio="4 4">100%</td>
+                <td>2</td>
+                <td>1</td>
+                <td class="right" data-ratio="5 6">83%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_32631969bbaa328e_base_py.html">geotravel/settings/base.py</a></td>
                 <td>40</td>
                 <td>0</td>
                 <td>0</td>
-                <td class="right" data-ratio="40 40">100%</td>
+                <td>2</td>
+                <td>0</td>
+                <td class="right" data-ratio="42 42">100%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_0722ab8617a10db1_urls_py.html">geotravel/urls.py</a></td>
                 <td>14</td>
                 <td>2</td>
                 <td>0</td>
-                <td class="right" data-ratio="12 14">86%</td>
+                <td>2</td>
+                <td>1</td>
+                <td class="right" data-ratio="13 16">81%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_cc819ff88ff7bf02___init___py.html">geotravel_app/__init__.py</a></td>
+                <td>0</td>
+                <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td>0</td>
@@ -107,6 +125,8 @@
                 <td>13</td>
                 <td>0</td>
                 <td>0</td>
+                <td>0</td>
+                <td>0</td>
                 <td class="right" data-ratio="13 13">100%</td>
             </tr>
             <tr class="file">
@@ -114,11 +134,15 @@
                 <td>28</td>
                 <td>10</td>
                 <td>0</td>
-                <td class="right" data-ratio="18 28">64%</td>
+                <td>6</td>
+                <td>0</td>
+                <td class="right" data-ratio="18 34">53%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_6c59553012e0dbdb_0001_initial_py.html">geotravel_app/migrations/0001_initial.py</a></td>
                 <td>6</td>
+                <td>0</td>
+                <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td class="right" data-ratio="6 6">100%</td>
@@ -128,11 +152,15 @@
                 <td>4</td>
                 <td>0</td>
                 <td>0</td>
+                <td>0</td>
+                <td>0</td>
                 <td class="right" data-ratio="4 4">100%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_6c59553012e0dbdb_0003_auto_20200420_0958_py.html">geotravel_app/migrations/0003_auto_20200420_0958.py</a></td>
                 <td>5</td>
+                <td>0</td>
+                <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td class="right" data-ratio="5 5">100%</td>
@@ -142,11 +170,15 @@
                 <td>4</td>
                 <td>0</td>
                 <td>0</td>
+                <td>0</td>
+                <td>0</td>
                 <td class="right" data-ratio="4 4">100%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_6c59553012e0dbdb_0005_auto_20200504_0345_py.html">geotravel_app/migrations/0005_auto_20200504_0345.py</a></td>
                 <td>5</td>
+                <td>0</td>
+                <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td class="right" data-ratio="5 5">100%</td>
@@ -156,11 +188,15 @@
                 <td>5</td>
                 <td>0</td>
                 <td>0</td>
+                <td>0</td>
+                <td>0</td>
                 <td class="right" data-ratio="5 5">100%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_6c59553012e0dbdb_0007_auto_20200609_1400_py.html">geotravel_app/migrations/0007_auto_20200609_1400.py</a></td>
                 <td>4</td>
+                <td>0</td>
+                <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td class="right" data-ratio="4 4">100%</td>
@@ -170,10 +206,14 @@
                 <td>5</td>
                 <td>0</td>
                 <td>0</td>
+                <td>0</td>
+                <td>0</td>
                 <td class="right" data-ratio="5 5">100%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_6c59553012e0dbdb___init___py.html">geotravel_app/migrations/__init__.py</a></td>
+                <td>0</td>
+                <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td>0</td>
@@ -184,11 +224,15 @@
                 <td>71</td>
                 <td>6</td>
                 <td>0</td>
+                <td>0</td>
+                <td>0</td>
                 <td class="right" data-ratio="65 71">92%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_cc819ff88ff7bf02_tests_py.html">geotravel_app/tests.py</a></td>
                 <td>1</td>
+                <td>0</td>
+                <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td class="right" data-ratio="1 1">100%</td>
@@ -198,11 +242,15 @@
                 <td>11</td>
                 <td>0</td>
                 <td>0</td>
-                <td class="right" data-ratio="11 11">100%</td>
+                <td>6</td>
+                <td>0</td>
+                <td class="right" data-ratio="17 17">100%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_cc819ff88ff7bf02_urls_py.html">geotravel_app/urls.py</a></td>
                 <td>3</td>
+                <td>0</td>
+                <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td class="right" data-ratio="3 3">100%</td>
@@ -212,10 +260,14 @@
                 <td>103</td>
                 <td>80</td>
                 <td>0</td>
-                <td class="right" data-ratio="23 103">22%</td>
+                <td>22</td>
+                <td>0</td>
+                <td class="right" data-ratio="23 125">18%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_b5b977c4274e09e6___init___py.html">guides/__init__.py</a></td>
+                <td>0</td>
+                <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td>0</td>
@@ -226,6 +278,8 @@
                 <td>16</td>
                 <td>0</td>
                 <td>0</td>
+                <td>0</td>
+                <td>0</td>
                 <td class="right" data-ratio="16 16">100%</td>
             </tr>
             <tr class="file">
@@ -233,11 +287,15 @@
                 <td>21</td>
                 <td>10</td>
                 <td>0</td>
-                <td class="right" data-ratio="11 21">52%</td>
+                <td>6</td>
+                <td>0</td>
+                <td class="right" data-ratio="11 27">41%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_40edafc7ec937c08_0001_initial_py.html">guides/migrations/0001_initial.py</a></td>
                 <td>7</td>
+                <td>0</td>
+                <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td class="right" data-ratio="7 7">100%</td>
@@ -247,11 +305,15 @@
                 <td>4</td>
                 <td>0</td>
                 <td>0</td>
+                <td>0</td>
+                <td>0</td>
                 <td class="right" data-ratio="4 4">100%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_40edafc7ec937c08_0003_guide_slug_py.html">guides/migrations/0003_guide_slug.py</a></td>
                 <td>4</td>
+                <td>0</td>
+                <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td class="right" data-ratio="4 4">100%</td>
@@ -261,11 +323,15 @@
                 <td>4</td>
                 <td>0</td>
                 <td>0</td>
+                <td>0</td>
+                <td>0</td>
                 <td class="right" data-ratio="4 4">100%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_40edafc7ec937c08_0005_guidepricetable_py.html">guides/migrations/0005_guidepricetable.py</a></td>
                 <td>5</td>
+                <td>0</td>
+                <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td class="right" data-ratio="5 5">100%</td>
@@ -275,11 +341,15 @@
                 <td>4</td>
                 <td>0</td>
                 <td>0</td>
+                <td>0</td>
+                <td>0</td>
                 <td class="right" data-ratio="4 4">100%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_40edafc7ec937c08_0007_guide_content_ru_py.html">guides/migrations/0007_guide_content_ru.py</a></td>
                 <td>5</td>
+                <td>0</td>
+                <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td class="right" data-ratio="5 5">100%</td>
@@ -289,11 +359,15 @@
                 <td>4</td>
                 <td>0</td>
                 <td>0</td>
+                <td>0</td>
+                <td>0</td>
                 <td class="right" data-ratio="4 4">100%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_40edafc7ec937c08_0009_guide_content_es_py.html">guides/migrations/0009_guide_content_es.py</a></td>
                 <td>5</td>
+                <td>0</td>
+                <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td class="right" data-ratio="5 5">100%</td>
@@ -303,6 +377,8 @@
                 <td>5</td>
                 <td>0</td>
                 <td>0</td>
+                <td>0</td>
+                <td>0</td>
                 <td class="right" data-ratio="5 5">100%</td>
             </tr>
             <tr class="file">
@@ -310,10 +386,14 @@
                 <td>4</td>
                 <td>0</td>
                 <td>0</td>
+                <td>0</td>
+                <td>0</td>
                 <td class="right" data-ratio="4 4">100%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_40edafc7ec937c08___init___py.html">guides/migrations/__init__.py</a></td>
+                <td>0</td>
+                <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td>0</td>
@@ -324,11 +404,15 @@
                 <td>49</td>
                 <td>10</td>
                 <td>0</td>
-                <td class="right" data-ratio="39 49">80%</td>
+                <td>2</td>
+                <td>0</td>
+                <td class="right" data-ratio="39 51">76%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_b5b977c4274e09e6_tests_py.html">guides/tests.py</a></td>
                 <td>1</td>
+                <td>0</td>
+                <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td class="right" data-ratio="1 1">100%</td>
@@ -338,11 +422,15 @@
                 <td>8</td>
                 <td>0</td>
                 <td>0</td>
-                <td class="right" data-ratio="8 8">100%</td>
+                <td>4</td>
+                <td>0</td>
+                <td class="right" data-ratio="12 12">100%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_b5b977c4274e09e6_urls_py.html">guides/urls.py</a></td>
                 <td>5</td>
+                <td>0</td>
+                <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td class="right" data-ratio="5 5">100%</td>
@@ -352,24 +440,32 @@
                 <td>15</td>
                 <td>10</td>
                 <td>0</td>
-                <td class="right" data-ratio="5 15">33%</td>
+                <td>6</td>
+                <td>0</td>
+                <td class="right" data-ratio="5 21">24%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_b5b977c4274e09e6_views_py.html">guides/views.py</a></td>
                 <td>33</td>
                 <td>23</td>
                 <td>0</td>
-                <td class="right" data-ratio="10 33">30%</td>
+                <td>4</td>
+                <td>0</td>
+                <td class="right" data-ratio="10 37">27%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="manage_py.html">manage.py</a></td>
                 <td>12</td>
                 <td>2</td>
                 <td>0</td>
-                <td class="right" data-ratio="10 12">83%</td>
+                <td>2</td>
+                <td>1</td>
+                <td class="right" data-ratio="11 14">79%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_666c359549127255___init___py.html">tours/__init__.py</a></td>
+                <td>0</td>
+                <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td>0</td>
@@ -380,11 +476,15 @@
                 <td>24</td>
                 <td>0</td>
                 <td>0</td>
+                <td>0</td>
+                <td>0</td>
                 <td class="right" data-ratio="24 24">100%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_666c359549127255_forms_py.html">tours/forms.py</a></td>
                 <td>6</td>
+                <td>0</td>
+                <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td class="right" data-ratio="6 6">100%</td>
@@ -394,11 +494,15 @@
                 <td>6</td>
                 <td>0</td>
                 <td>0</td>
+                <td>0</td>
+                <td>0</td>
                 <td class="right" data-ratio="6 6">100%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_8297d40901e4a0a8_0002_auto_20200111_0516_py.html">tours/migrations/0002_auto_20200111_0516.py</a></td>
                 <td>4</td>
+                <td>0</td>
+                <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td class="right" data-ratio="4 4">100%</td>
@@ -408,11 +512,15 @@
                 <td>4</td>
                 <td>0</td>
                 <td>0</td>
+                <td>0</td>
+                <td>0</td>
                 <td class="right" data-ratio="4 4">100%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_8297d40901e4a0a8_0004_auto_20200112_1229_py.html">tours/migrations/0004_auto_20200112_1229.py</a></td>
                 <td>6</td>
+                <td>0</td>
+                <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td class="right" data-ratio="6 6">100%</td>
@@ -422,11 +530,15 @@
                 <td>4</td>
                 <td>0</td>
                 <td>0</td>
+                <td>0</td>
+                <td>0</td>
                 <td class="right" data-ratio="4 4">100%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_8297d40901e4a0a8_0006_tour_content_py.html">tours/migrations/0006_tour_content.py</a></td>
                 <td>5</td>
+                <td>0</td>
+                <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td class="right" data-ratio="5 5">100%</td>
@@ -436,11 +548,15 @@
                 <td>4</td>
                 <td>0</td>
                 <td>0</td>
+                <td>0</td>
+                <td>0</td>
                 <td class="right" data-ratio="4 4">100%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_8297d40901e4a0a8_0008_toursliderimages_py.html">tours/migrations/0008_toursliderimages.py</a></td>
                 <td>5</td>
+                <td>0</td>
+                <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td class="right" data-ratio="5 5">100%</td>
@@ -450,11 +566,15 @@
                 <td>6</td>
                 <td>0</td>
                 <td>0</td>
+                <td>0</td>
+                <td>0</td>
                 <td class="right" data-ratio="6 6">100%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_8297d40901e4a0a8_0010_auto_20200418_1136_py.html">tours/migrations/0010_auto_20200418_1136.py</a></td>
                 <td>4</td>
+                <td>0</td>
+                <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td class="right" data-ratio="4 4">100%</td>
@@ -464,11 +584,15 @@
                 <td>5</td>
                 <td>0</td>
                 <td>0</td>
+                <td>0</td>
+                <td>0</td>
                 <td class="right" data-ratio="5 5">100%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_8297d40901e4a0a8_0012_auto_20200420_1952_py.html">tours/migrations/0012_auto_20200420_1952.py</a></td>
                 <td>4</td>
+                <td>0</td>
+                <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td class="right" data-ratio="4 4">100%</td>
@@ -478,11 +602,15 @@
                 <td>5</td>
                 <td>0</td>
                 <td>0</td>
+                <td>0</td>
+                <td>0</td>
                 <td class="right" data-ratio="5 5">100%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_8297d40901e4a0a8_0014_tour_content_bg_py.html">tours/migrations/0014_tour_content_bg.py</a></td>
                 <td>5</td>
+                <td>0</td>
+                <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td class="right" data-ratio="5 5">100%</td>
@@ -492,10 +620,14 @@
                 <td>4</td>
                 <td>0</td>
                 <td>0</td>
+                <td>0</td>
+                <td>0</td>
                 <td class="right" data-ratio="4 4">100%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_8297d40901e4a0a8___init___py.html">tours/migrations/__init__.py</a></td>
+                <td>0</td>
+                <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td>0</td>
@@ -506,53 +638,24 @@
                 <td>88</td>
                 <td>0</td>
                 <td>0</td>
-                <td class="right" data-ratio="88 88">100%</td>
-            </tr>
-            <tr class="file">
-                <td class="name left"><a href="d_8e1967e0db4e5a19___init___py.html">tours/tests/__init__.py</a></td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td class="right" data-ratio="0 0">100%</td>
-            </tr>
-            <tr class="file">
-                <td class="name left"><a href="d_8e1967e0db4e5a19_test_forms_py.html">tours/tests/test_forms.py</a></td>
-                <td>18</td>
-                <td>0</td>
-                <td>0</td>
-                <td class="right" data-ratio="18 18">100%</td>
-            </tr>
-            <tr class="file">
-                <td class="name left"><a href="d_8e1967e0db4e5a19_test_models_py.html">tours/tests/test_models.py</a></td>
-                <td>51</td>
-                <td>0</td>
-                <td>0</td>
-                <td class="right" data-ratio="51 51">100%</td>
-            </tr>
-            <tr class="file">
-                <td class="name left"><a href="d_8e1967e0db4e5a19_test_utils_py.html">tours/tests/test_utils.py</a></td>
-                <td>27</td>
-                <td>0</td>
-                <td>0</td>
-                <td class="right" data-ratio="27 27">100%</td>
-            </tr>
-            <tr class="file">
-                <td class="name left"><a href="d_8e1967e0db4e5a19_test_views_py.html">tours/tests/test_views.py</a></td>
-                <td>100</td>
-                <td>0</td>
-                <td>0</td>
-                <td class="right" data-ratio="100 100">100%</td>
+                <td>2</td>
+                <td>1</td>
+                <td class="right" data-ratio="89 90">99%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_666c359549127255_translation_py.html">tours/translation.py</a></td>
                 <td>11</td>
                 <td>0</td>
                 <td>0</td>
-                <td class="right" data-ratio="11 11">100%</td>
+                <td>6</td>
+                <td>0</td>
+                <td class="right" data-ratio="17 17">100%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_666c359549127255_urls_py.html">tours/urls.py</a></td>
                 <td>5</td>
+                <td>0</td>
+                <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td class="right" data-ratio="5 5">100%</td>
@@ -562,17 +665,23 @@
                 <td>15</td>
                 <td>0</td>
                 <td>0</td>
-                <td class="right" data-ratio="15 15">100%</td>
+                <td>6</td>
+                <td>0</td>
+                <td class="right" data-ratio="21 21">100%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_666c359549127255_views_py.html">tours/views.py</a></td>
                 <td>76</td>
                 <td>0</td>
                 <td>0</td>
-                <td class="right" data-ratio="76 76">100%</td>
+                <td>22</td>
+                <td>2</td>
+                <td class="right" data-ratio="96 98">98%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_a4173fb64c5af229___init___py.html">transport/__init__.py</a></td>
+                <td>0</td>
+                <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td>0</td>
@@ -583,6 +692,8 @@
                 <td>23</td>
                 <td>0</td>
                 <td>0</td>
+                <td>0</td>
+                <td>0</td>
                 <td class="right" data-ratio="23 23">100%</td>
             </tr>
             <tr class="file">
@@ -590,11 +701,15 @@
                 <td>18</td>
                 <td>10</td>
                 <td>0</td>
-                <td class="right" data-ratio="8 18">44%</td>
+                <td>6</td>
+                <td>0</td>
+                <td class="right" data-ratio="8 24">33%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_c9191570d1d431ab_0001_initial_py.html">transport/migrations/0001_initial.py</a></td>
                 <td>8</td>
+                <td>0</td>
+                <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td class="right" data-ratio="8 8">100%</td>
@@ -604,11 +719,15 @@
                 <td>4</td>
                 <td>0</td>
                 <td>0</td>
+                <td>0</td>
+                <td>0</td>
                 <td class="right" data-ratio="4 4">100%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_c9191570d1d431ab_0003_transferorder_py.html">transport/migrations/0003_transferorder.py</a></td>
                 <td>5</td>
+                <td>0</td>
+                <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td class="right" data-ratio="5 5">100%</td>
@@ -618,11 +737,15 @@
                 <td>4</td>
                 <td>0</td>
                 <td>0</td>
+                <td>0</td>
+                <td>0</td>
                 <td class="right" data-ratio="4 4">100%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_c9191570d1d431ab_0005_transferpricetable_transferstaticpage_transferstaticpageorder_py.html">transport/migrations/0005_transferpricetable_transferstaticpage_transferstaticpageorder.py</a></td>
                 <td>7</td>
+                <td>0</td>
+                <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td class="right" data-ratio="7 7">100%</td>
@@ -632,11 +755,15 @@
                 <td>4</td>
                 <td>0</td>
                 <td>0</td>
+                <td>0</td>
+                <td>0</td>
                 <td class="right" data-ratio="4 4">100%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_c9191570d1d431ab_0007_auto_20200420_0958_py.html">transport/migrations/0007_auto_20200420_0958.py</a></td>
                 <td>5</td>
+                <td>0</td>
+                <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td class="right" data-ratio="5 5">100%</td>
@@ -646,11 +773,15 @@
                 <td>4</td>
                 <td>0</td>
                 <td>0</td>
+                <td>0</td>
+                <td>0</td>
                 <td class="right" data-ratio="4 4">100%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_c9191570d1d431ab_0009_auto_20200504_0345_py.html">transport/migrations/0009_auto_20200504_0345.py</a></td>
                 <td>5</td>
+                <td>0</td>
+                <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td class="right" data-ratio="5 5">100%</td>
@@ -660,6 +791,8 @@
                 <td>5</td>
                 <td>0</td>
                 <td>0</td>
+                <td>0</td>
+                <td>0</td>
                 <td class="right" data-ratio="5 5">100%</td>
             </tr>
             <tr class="file">
@@ -667,10 +800,14 @@
                 <td>4</td>
                 <td>0</td>
                 <td>0</td>
+                <td>0</td>
+                <td>0</td>
                 <td class="right" data-ratio="4 4">100%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_c9191570d1d431ab___init___py.html">transport/migrations/__init__.py</a></td>
+                <td>0</td>
+                <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td>0</td>
@@ -681,11 +818,15 @@
                 <td>127</td>
                 <td>16</td>
                 <td>0</td>
-                <td class="right" data-ratio="111 127">87%</td>
+                <td>2</td>
+                <td>0</td>
+                <td class="right" data-ratio="111 129">86%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_a4173fb64c5af229_tests_py.html">transport/tests.py</a></td>
                 <td>1</td>
+                <td>0</td>
+                <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td class="right" data-ratio="1 1">100%</td>
@@ -695,11 +836,15 @@
                 <td>17</td>
                 <td>0</td>
                 <td>0</td>
-                <td class="right" data-ratio="17 17">100%</td>
+                <td>10</td>
+                <td>0</td>
+                <td class="right" data-ratio="27 27">100%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_a4173fb64c5af229_urls_py.html">transport/urls.py</a></td>
                 <td>5</td>
+                <td>0</td>
+                <td>0</td>
                 <td>0</td>
                 <td>0</td>
                 <td class="right" data-ratio="5 5">100%</td>
@@ -709,14 +854,18 @@
                 <td>15</td>
                 <td>10</td>
                 <td>0</td>
-                <td class="right" data-ratio="5 15">33%</td>
+                <td>6</td>
+                <td>0</td>
+                <td class="right" data-ratio="5 21">24%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_a4173fb64c5af229_views_py.html">transport/views.py</a></td>
                 <td>109</td>
                 <td>94</td>
                 <td>0</td>
-                <td class="right" data-ratio="15 109">14%</td>
+                <td>34</td>
+                <td>0</td>
+                <td class="right" data-ratio="15 143">10%</td>
             </tr>
         </tbody>
     </table>
@@ -728,7 +877,7 @@
     <div class="content">
         <p>
             <a class="nav" href="https://coverage.readthedocs.io">coverage.py v6.0.2</a>,
-            created at 2021-10-24 14:22 +0300
+            created at 2021-10-24 21:40 +0300
         </p>
     </div>
 </div>
