@@ -28,17 +28,4 @@ class TourCommentForm(forms.Form):
         'placeholder': 'Your Comment'
     }))
 
-    def clean_email(self):
-        email = self.cleaned_data.get("email")
-        if not "@" in email: # pragma: no cover
-            raise forms.ValidationError("Please write email.")
-        if not "." in email: # pragma: no cover
-            raise forms.ValidationError("Please write email.") 
-        return email
-
-    def clean_name(self): # pragma: no cover
-        fullname = self.cleaned_data.get('full_name')
-        if "@" in fullname:
-            raise forms.ValidationError("This field is for fullname. Not for email") 
-        return fullname
 
