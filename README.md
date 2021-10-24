@@ -11,3 +11,9 @@
 | 7. | `pip install -r requirements.txt` or `pip3 install -r requirements.txt` | Install dependencies |
 | 8. | `python manage.py make migrations && python manage.py migrate` | Creating local `db.sqlite3` db |
 | 9. | `python manage.py runserver 8000` | Running web server |
+
+---
+# For seeing coverage:
+
+1. Go to [here](https://kamilraliyev.github.io/geo-travel-source/index.html)
+2. Search for `tours`
