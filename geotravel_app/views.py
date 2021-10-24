@@ -172,7 +172,7 @@ def sahman(request):
 
 
 def error_404(request, exception):
-    content = AboutUs.objects.get(name_en='Our Mission')
+    content = False #AboutUs.objects.get(name_en='Our Mission')
     category = TourCategory.objects.all().order_by('order')
     return render(request, 'errors/404.html', context={
         'content': content,
