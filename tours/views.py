@@ -86,14 +86,14 @@ def tour_details(request, slug):
                 order.email = email
                 order.tour_name = tour.name
                 order.save()
-                send_mail(f"{name} | {tour.name}", f"""
-                New Order Information:
+            #     send_mail(f"{name} | {tour.name}", f"""
+            #     New Order Information:
 
-                Orderer: {name} ({email})
-                Tour that order came: {tour.name} ({tour.get_absolute_url()})
-                Tour Option: {TourPriceTable.objects.get(pk=select).desc}
-                Price: ${order.price}
-            """, settings.EMAIL_HOST_USER, ['mice@geo-travel.az'], fail_silently=False)
+            #     Orderer: {name} ({email})
+            #     Tour that order came: {tour.name} ({tour.get_absolute_url()})
+            #     Tour Option: {TourPriceTable.objects.get(pk=select).desc}
+            #     Price: ${order.price}
+            # """, settings.EMAIL_HOST_USER, ['mice@geo-travel.az'], fail_silently=False)
 
                 return render(request, 'tour-details.html', context={
                     'tour': tour,
